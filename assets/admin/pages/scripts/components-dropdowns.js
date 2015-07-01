@@ -251,8 +251,8 @@ var ComponentsDropdowns = function () {
         init: function () {            
             handleSelect2();
             handleSelect2Modal();
-            handleMultiSelect();
-            handleBootstrapSelect();
+            //handleMultiSelect();
+            //handleBootstrapSelect();
         }
     };
 
