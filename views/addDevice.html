@@ -1,0 +1,681 @@
+<div class="page-bar">
+  <ul class="page-breadcrumb">
+    <li> <i class="fa fa-home"></i> <a href="#/dashboard">Home</a> <i class="fa fa-angle-right"></i> </li>
+    <li> <a href="#/addDevice">Add New Device</a> </li>
+  </ul>
+</div>
+<div class="row">
+  <div class="col-md-12 col-sm-12 col-xs-12"> 
+    <!-- BEGIN SAMPLE FORM PORTLET-->
+    <div class="portlet light ">
+      <div class="portlet-title">
+        <div class="caption"> <i class="fa fa-gift"></i> Add New Device </div>
+        <!--<div class="tools"> <a href="" class="collapse"> </a> <a href="#portlet-config" data-toggle="modal" class="config"> </a> <a href="" class="reload"> </a> <a href="" class="remove"> </a> </div>--> 
+      </div>
+      <div class="portlet-body form">
+        <form class="form-horizontal" role="form">
+          <div class="form-body">
+            <div class="form-group has-warning">
+              <label class="col-md-3 control-label">Device ID</label>
+              <div class="col-md-6">
+                <div class="input-icon right"> <i class="fa fa-info-circle tooltips" data-original-title="Email address" data-container="body"></i>
+                  <input type="text" placeholder="Device ID" class="form-control">
+                </div>
+              </div>
+            </div>
+            <div class="form-group has-warning">
+              <label class="col-md-3 control-label">Vehicle Brand</label>
+              <div class="col-md-6">
+                <select ng-model="myDropDown" class="form-control select2me" data-placeholder="Vehicle Brand">
+                  <option value=""></option>
+                  <option value="Maruti">Maruti</option>
+                  <option value="Hyundai">Hyundai</option>
+                  <option value="Honda">Honda</option>
+                  <option value="Toyota">Toyota</option>
+                  <option value="Mahindra">Mahindra</option>
+                  <option value="Tata">Tata</option>
+                  <option value="Ford">Ford</option>
+                  <option value="Chevrolet">Chevrolet</option>
+                  <option value="Renault">Renault</option>
+                  <option value="Volkswagen">Volkswagen</option>
+                  <option value="" disabled="disabled">-All Brands-</option>
+                  <option value="Abarth">Abarth</option>
+                  <option value="Ashok Leyland">Ashok Leyland</option>
+                  <option value="Aston Martin">Aston Martin</option>
+                  <option value="Audi">Audi</option>
+                  <option value="Bajaj">Bajaj</option>
+                  <option value="Bentley">Bentley</option>
+                  <option value="BMW">BMW</option>
+                  <option value="Bugatti">Bugatti</option>
+                  <option value="Caterham">Caterham</option>
+                  <option value="Chevrolet">Chevrolet</option>
+                  <option value="Conquest">Conquest</option>
+                  <option value="Datsun">Datsun</option>
+                  <option value="DC">DC</option>
+                  <option value="Ferrari">Ferrari</option>
+                  <option value="Fiat">Fiat</option>
+                  <option value="Force">Force</option>
+                  <option value="Ford">Ford</option>
+                  <option value="Honda">Honda</option>
+                  <option value="Hyundai">Hyundai</option>
+                  <option value="ICML">ICML</option>
+                  <option value="Isuzu">Isuzu</option>
+                  <option value="Jaguar">Jaguar</option>
+                  <option value="Jeep">Jeep</option>
+                  <option value="Koenigsegg">Koenigsegg</option>
+                  <option value="Lamborghini">Lamborghini</option>
+                  <option value="Land Rover">Land Rover</option>
+                  <option value="Mahindra">Mahindra</option>
+                  <option value="Mahindra Ssangyong">Mahindra Ssangyong</option>
+                  <option value="Maruti">Maruti</option>
+                  <option value="Maserati">Maserati</option>
+                  <option value="Mercedes-Benz">Mercedes-Benz</option>
+                  <option value="Mini">Mini</option>
+                  <option value="Mitsubishi">Mitsubishi</option>
+                  <option value="Nissan">Nissan</option>
+                  <option value="Peugeot">Peugeot</option>
+                  <option value="Porsche">Porsche</option
+                  <option value="Premier">Premier</option>
+                  <option value="Renault">Renault</option>
+                  <option value="Rolls-Royce">Rolls-Royce</option>
+                  <option value="Skoda">Skoda</option>
+                  <option value="Tata">Tata</option>
+                  <option value="Toyota">Toyota</option>
+                  <option value="Volkswagen">Volkswagen</option>
+                  <option value="Volvo">Volvo</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group has-warning">
+              <label class="col-md-3 control-label">Vehicle Model</label>
+              <div class="col-md-6">
+                <select class="form-control select2me" data-placeholder="Select Model">
+                  <option value=""></option>
+                  <option ng-show="myDropDown=='Maruti'" value="Maruti Alto 800">Alto 800</option>
+                  <option ng-show="myDropDown=='Maruti'" value="Maruti Alto K10">Alto K10</option>
+                  <option ng-show="myDropDown=='Maruti'" value="Maruti Celerio">Celerio</option>
+                  <option ng-show="myDropDown=='Maruti'" ng-show="myDropDown=='Maruti'" value="Maruti Ciaz">Ciaz</option>
+                  <option ng-show="myDropDown=='Maruti'" value="Maruti Eeco">Eeco</option>
+                  <option ng-show="myDropDown=='Maruti'" value="Maruti Ertiga">Ertiga</option>
+                  <option ng-show="myDropDown=='Maruti'" value="Maruti Grand Vitara">Grand Vitara</option>
+                  <option ng-show="myDropDown=='Maruti'" value="Maruti Gypsy">Gypsy</option>
+                  <option ng-show="myDropDown=='Maruti'" value="Maruti Omni">Omni</option>
+                  <option ng-show="myDropDown=='Maruti'" value="Maruti Ritz">Ritz</option>
+                  <option ng-show="myDropDown=='Maruti'" value="Maruti Swift Dzire">Swift Dzire</option>
+                  <option ng-show="myDropDown=='Maruti'" value="Maruti Swift">Swift</option>
+                  <option ng-show="myDropDown=='Maruti'" value="Maruti Wagon R">Wagon R</option>
+                  <option ng-show="myDropDown=='Maruti'" value="Maruti Wagon R Stingray">Wagon R Stingray</option>
+                  <option ng-show="myDropDown=='Maruti'" value="" disabled="">-Upcoming Models-</option>
+                  <option ng-show="myDropDown=='Maruti'" value="Maruti Cervo">Cervo</option>
+                  <option ng-show="myDropDown=='Maruti'" value="Maruti iV-4">iV-4</option>
+                  <option ng-show="myDropDown=='Maruti'" value="Maruti Jimny">Jimny</option>
+                  <option ng-show="myDropDown=='Maruti'" value="Maruti MR Wagon">MR Wagon</option>
+                  <option ng-show="myDropDown=='Maruti'" value="Maruti SX4 S Cross">S Cross</option>
+                  <option ng-show="myDropDown=='Maruti'" value="Maruti XA Alpha">YBA</option>
+                  <option ng-show="myDropDown=='Maruti'" value="Maruti YRA">YRA</option>
+                  
+                  <option ng-show="myDropDown=='Hyundai'" value="Hyundai Elantra">Elantra</option>
+                  <option  ng-show="myDropDown=='Hyundai'" value="Hyundai EON">EON</option>
+                  <option  ng-show="myDropDown=='Hyundai'" value="Hyundai Grand i10">Grand i10</option>
+                  <option  ng-show="myDropDown=='Hyundai'" value="Hyundai i10">i10</option>
+                  <option  ng-show="myDropDown=='Hyundai'" value="Hyundai i20 Active">i20 Active</option>
+                  <option  ng-show="myDropDown=='Hyundai'" value="Hyundai i20">Elite i20</option>
+                  <option  ng-show="myDropDown=='Hyundai'" value="Hyundai Santa Fe">Santa Fe</option>
+                  <option  ng-show="myDropDown=='Hyundai'" value="Hyundai Verna">4S Fluidic Verna</option>
+                  <option  ng-show="myDropDown=='Hyundai'" value="Hyundai Xcent">Xcent</option>
+                  <option  ng-show="myDropDown=='Hyundai'" value="" disabled="">-Upcoming Models-</option>
+                  <option  ng-show="myDropDown=='Hyundai'" value="Hyundai Creta">Creta</option>
+                  <option  ng-show="myDropDown=='Hyundai'" value="Hyundai Sonata">Sonata</option>
+                  <option  ng-show="myDropDown=='Hyundai'" value="Hyundai Tucson">Tucson</option>
+                  
+                  <option ng-show="myDropDown=='Honda'" value="Honda Amaze">Amaze</option>
+                  <option ng-show="myDropDown=='Honda'" value="Honda Brio">Brio</option>
+                  <option ng-show="myDropDown=='Honda'" value="Honda City">City</option>
+                  <option ng-show="myDropDown=='Honda'" value="Honda CR-V">CR V</option>
+                  <option ng-show="myDropDown=='Honda'" value="Honda Mobilio">Mobilio</option>
+                  <option ng-show="myDropDown=='Honda'" value="" disabled="">-Upcoming Models-</option>
+                  <option ng-show="myDropDown=='Honda'" value="Honda Jazz">Jazz</option>
+                  <option ng-show="myDropDown=='Honda'" value="Honda New Accord">Accord</option>
+                  <option ng-show="myDropDown=='Honda'" value="Honda NSX">NSX</option>
+                  <option ng-show="myDropDown=='Honda'" value="Honda Vision XS 1">Vision XS 1</option>
+                  
+                  <option ng-show="myDropDown=='Toyota'" value="Toyota Camry">Camry</option>
+                  <option ng-show="myDropDown=='Toyota'" value="Toyota Corolla Altis">Corolla Altis</option>
+                  <option ng-show="myDropDown=='Toyota'" value="Toyota Etios Cross">Etios Cross</option>
+                  <option ng-show="myDropDown=='Toyota'" value="Toyota Etios">Etios</option>
+                  <option ng-show="myDropDown=='Toyota'" value="Toyota Etios Liva">Etios Liva</option>
+                  <option ng-show="myDropDown=='Toyota'" value="Toyota Fortuner">Fortuner</option>
+                  <option ng-show="myDropDown=='Toyota'" value="Toyota Innova">Innova</option>
+                  <option ng-show="myDropDown=='Toyota'" value="Toyota Land Cruiser">Land Cruiser 200</option>
+                  <option ng-show="myDropDown=='Toyota'" value="Toyota Land Cruiser Prado">Land Cruiser Prado</option>
+                  <option ng-show="myDropDown=='Toyota'" value="Toyota Prius">Prius</option>
+                  <option ng-show="myDropDown=='Toyota'" value="" disabled="">-Upcoming Model-</option>
+                  <option ng-show="myDropDown=='Toyota'" value="Toyota Vios">Vios</option>
+                  
+                  <option ng-show="myDropDown=='Mahindra'" value="Mahindra Bolero">Bolero</option>
+                  <option ng-show="myDropDown=='Mahindra'" value="Mahindra e2o">e2o</option>
+                  <option ng-show="myDropDown=='Mahindra'" value="Mahindra Quanto">Quanto</option>
+                  <option ng-show="myDropDown=='Mahindra'" value="Mahindra Scorpio">Scorpio</option>
+                  <option ng-show="myDropDown=='Mahindra'" value="Mahindra Thar">Thar</option>
+                  <option ng-show="myDropDown=='Mahindra'" value="Mahindra Verito">Verito</option>
+                  <option ng-show="myDropDown=='Mahindra'" value="Mahindra Verito Vibe">Verito Vibe</option>
+                  <option ng-show="myDropDown=='Mahindra'" value="Mahindra XUV500">XUV 500</option>
+                  <option ng-show="myDropDown=='Mahindra'" value="Mahindra Xylo">Xylo</option>
+                  <option ng-show="myDropDown=='Mahindra'" value="" disabled="">-Upcoming Models-</option>
+                  <option ng-show="myDropDown=='Mahindra'" value="Mahindra Compact XUV">S101</option>
+                  <option ng-show="myDropDown=='Mahindra'" value="Mahindra Halo">Halo</option>
+                  
+                  <option ng-show="myDropDown=='Tata'" value="Tata Aria">Aria</option>
+                  <option ng-show="myDropDown=='Tata'" value="Tata Bolt">Bolt</option>
+                  <option ng-show="myDropDown=='Tata'" value="Tata Indica V2">Indica eV2</option>
+                  <option ng-show="myDropDown=='Tata'" value="Tata Indica Vista">Vista</option>
+                  <option ng-show="myDropDown=='Tata'" value="Tata Indigo CS">Indigo eCS</option>
+                  <option ng-show="myDropDown=='Tata'" value="Tata Manza">Manza</option>
+                  <option ng-show="myDropDown=='Tata'" value="Tata Movus">Movus</option>
+                  <option ng-show="myDropDown=='Tata'" value="Tata Nano">Nano</option>
+                  <option ng-show="myDropDown=='Tata'" value="Tata New Safari">New Safari</option>
+                  <option ng-show="myDropDown=='Tata'" value="Tata Safari Storme">Safari Storme</option>
+                  <option ng-show="myDropDown=='Tata'" value="Tata Sumo">Sumo</option>
+                  <option ng-show="myDropDown=='Tata'" value="Tata Venture">Venture</option>
+                  <option ng-show="myDropDown=='Tata'" value="Tata Winger">Winger</option>
+                  <option ng-show="myDropDown=='Tata'" value="Tata Xenon XT">Xenon XT</option>
+                  <option ng-show="myDropDown=='Tata'" value="Tata Zest">Zest</option>
+                  <option ng-show="myDropDown=='Tata'" value="" disabled="">-Upcoming Models-</option>
+                  <option ng-show="myDropDown=='Tata'" value="Tata Kite Hatch">Kite Hatch</option>
+                  <option ng-show="myDropDown=='Tata'" value="Tata Kite Sedan">Kite Sedan</option>
+                  <option ng-show="myDropDown=='Tata'" value="Tata Nexon">Hexa</option>
+                  
+                  <option ng-show="myDropDown=='Ford'" value="Ford Classic">Classic</option>
+                  <option ng-show="myDropDown=='Ford'" value="Ford Ecosport">Ecosport</option>
+                  <option ng-show="myDropDown=='Ford'" value="Ford Endeavour">Endeavour</option>
+                  <option ng-show="myDropDown=='Ford'" value="Ford Fiesta">Fiesta</option>
+                  <option ng-show="myDropDown=='Ford'" value="Ford Figo">Figo</option>
+                  <option ng-show="myDropDown=='Ford'" value="" disabled="">-Upcoming Models-</option>
+                  <option ng-show="myDropDown=='Ford'" value="Ford B Max">B Max</option>
+                  <option ng-show="myDropDown=='Ford'" value="Ford Figo Aspire">Figo Aspire</option>
+                  <option ng-show="myDropDown=='Ford'" value="Ford Mondeo">Mondeo</option>
+                  <option ng-show="myDropDown=='Ford'" value="Ford Mustang">Mustang</option>
+                  
+                  <option ng-show="myDropDown=='Chevrolet'" value="Chevrolet Beat">Beat</option>
+                  <option ng-show="myDropDown=='Chevrolet'" value="Chevrolet Captiva">Captiva</option>
+                  <option ng-show="myDropDown=='Chevrolet'" value="Chevrolet Cruze">Cruze</option>
+                  <option ng-show="myDropDown=='Chevrolet'" value="Chevrolet Enjoy">Enjoy</option>
+                  <option ng-show="myDropDown=='Chevrolet'" value="Chevrolet Sail">Sail</option>
+                  <option ng-show="myDropDown=='Chevrolet'" value="Chevrolet Sail Hatchback">Sail Hatchback</option>
+                  <option ng-show="myDropDown=='Chevrolet'" value="Chevrolet Spark">Spark</option>
+                  <option ng-show="myDropDown=='Chevrolet'" value="Chevrolet Tavera">Tavera</option>
+                  <option ng-show="myDropDown=='Chevrolet'" value="" disabled="">-Upcoming Models-</option>
+                  <option ng-show="myDropDown=='Chevrolet'" value="Chevrolet Adra">Adra</option>
+                  <option ng-show="myDropDown=='Chevrolet'" value="Chevrolet Spin">Spin</option>
+                  <option ng-show="myDropDown=='Chevrolet'" value="Chevrolet Trailblazer">Trailblazer</option>
+                  
+                  <option ng-show="myDropDown=='Renault'" value="Renault Duster">Duster</option>
+                  <option ng-show="myDropDown=='Renault'" value="Renault Fluence">Fluence</option>
+                  <option ng-show="myDropDown=='Renault'" value="Renault Koleos">Koleos</option>
+                  <option ng-show="myDropDown=='Renault'" value="Renault Lodgy">Lodgy</option>
+                  <option ng-show="myDropDown=='Renault'" value="Renault Pulse">Pulse</option>
+                  <option ng-show="myDropDown=='Renault'" value="Renault Scala">Scala</option>
+                  <option ng-show="myDropDown=='Renault'" value="" disabled="">-Upcoming Models-</option>
+                  <option ng-show="myDropDown=='Renault'" value="Renault Clio">Clio</option>
+                  <option ng-show="myDropDown=='Renault'" value="Renault KWID">KWID</option>
+                  <option ng-show="myDropDown=='Renault'" value="Renault Sandero">Sandero</option>
+                  
+                  <option ng-show="myDropDown=='Volkswagen'" value="Volkswagen CrossPolo">Cross Polo</option>
+                  <option ng-show="myDropDown=='Volkswagen'" value="Volkswagen Jetta">Jetta</option>
+                  <option ng-show="myDropDown=='Volkswagen'" value="Volkswagen Polo">Polo</option>
+                  <option ng-show="myDropDown=='Volkswagen'" value="Volkswagen Vento">Vento</option>
+                  <option ng-show="myDropDown=='Volkswagen'" value="" disabled="">-Upcoming Models-</option>
+                  <option ng-show="myDropDown=='Volkswagen'" value="Volkswagen Passat">Passat</option>
+                  <option ng-show="myDropDown=='Volkswagen'" value="Volkswagen Taigun">Taigun</option>
+                  <option ng-show="myDropDown=='Volkswagen'" value="Volkswagen Tiguan">Tiguan</option>
+                  
+                  <option ng-show="myDropDown=='Abarth'" disabled="">-Upcoming Models-</option>
+                  <option ng-show="myDropDown=='Abarth'" value="Abarth Avventura">Avventura</option>
+                  <option ng-show="myDropDown=='Abarth'" value="Abarth Punto EVO">Punto EVO</option>
+                  
+                  <option ng-show="myDropDown=='Ashok Leyland'" value="Ashok Leyland Stile">Stile</option>
+                  
+                  <option ng-show="myDropDown=='Aston Martin'" value="Aston Martin DB9">DB9</option>
+                  <option ng-show="myDropDown=='Aston Martin'" value="Aston Martin Rapide">Rapide</option>
+                  <option ng-show="myDropDown=='Aston Martin'" value="Aston Martin Vanquish">Vanquish</option>
+                  <option ng-show="myDropDown=='Aston Martin'" value="Aston Martin Vantage">Vantage</option>
+                  <option ng-show="myDropDown=='Aston Martin'" value="" disabled="">-Upcoming Model-</option>
+                  <option ng-show="myDropDown=='Aston Martin'" value="Aston Martin Zagato">Zagato</option>
+                  
+                  <option ng-show="myDropDown=='Audi'" value="Audi A3">A3</option>
+                  <option ng-show="myDropDown=='Audi'" value="Audi A3 cabriolet">A3 cabriolet</option>
+                  <option ng-show="myDropDown=='Audi'" value="Audi A4">A4</option>
+                  <option ng-show="myDropDown=='Audi'" value="Audi A6">A6</option>
+                  <option ng-show="myDropDown=='Audi'" value="Audi A8">A8</option>
+                  <option ng-show="myDropDown=='Audi'" value="Audi Q3">Q3</option>
+                  <option ng-show="myDropDown=='Audi'" value="Audi Q5">Q5</option>
+                  <option ng-show="myDropDown=='Audi'" value="Audi Q7">Q7</option>
+                  <option ng-show="myDropDown=='Audi'" value="Audi R8">R8</option>
+                  <option ng-show="myDropDown=='Audi'" value="Audi RS5">RS5</option>
+                  <option ng-show="myDropDown=='Audi'" value="Audi RS6">RS6 Avant</option>
+                  <option ng-show="myDropDown=='Audi'" value="Audi RS7">RS7</option>
+                  <option ng-show="myDropDown=='Audi'" value="Audi S6">S6</option>
+                  <option ng-show="myDropDown=='Audi'" value="Audi TT">TT</option>
+                  
+                  <option ng-show="myDropDown=='Bajaj'" value="Bajaj RE60">RE60</option>
+                  
+                  <option ng-show="myDropDown=='Bentley'" value="Bentley Continental">Continental</option>
+                  <option ng-show="myDropDown=='Bentley'" value="Bentley Flying Spur">Flying Spur</option>
+                  <option ng-show="myDropDown=='Bentley'" value="Bentley Mulsanne">Mulsanne</option>
+                  <option ng-show="myDropDown=='Bentley'" value="" disabled="">-Upcoming Model-</option>
+                  <option ng-show="myDropDown=='Bentley'" value="Bentley Bentayga">Bentayga</option>
+                  
+                  <option ng-show="myDropDown=='BMW'" value="BMW 1 Series">1 Series</option>
+                  <option ng-show="myDropDown=='BMW'" value="BMW 3 Series">3 Series</option>
+                  <option ng-show="myDropDown=='BMW'" value="BMW 5 Series">5 Series</option>
+                  <option ng-show="myDropDown=='BMW'" value="BMW 6 Series">6 Series</option>
+                  <option ng-show="myDropDown=='BMW'" value="BMW 7 Series">7 Series</option>
+                  <option ng-show="myDropDown=='BMW'" value="BMW i8">i8</option>
+                  <option ng-show="myDropDown=='BMW'" value="BMW M Series">M Series</option>
+                  <option ng-show="myDropDown=='BMW'" value="BMW X1">X1</option>
+                  <option ng-show="myDropDown=='BMW'" value="BMW X3">X3</option>
+                  <option ng-show="myDropDown=='BMW'" value="BMW X5">X5</option>
+                  <option ng-show="myDropDown=='BMW'" value="BMW Z4">Z4</option>
+                  <option ng-show="myDropDown=='BMW'" value="" disabled="">-Upcoming Models-</option>
+                  <option ng-show="myDropDown=='BMW'" value="BMW i3">i3</option>
+                  <option ng-show="myDropDown=='BMW'" value="BMW X6">X6</option>
+                  
+                  <option ng-show="myDropDown=='Bugatti'" value="Bugatti Veyron">Veyron</option>
+                  
+                  <option ng-show="myDropDown=='Caterham'" value="Caterham 7">7</option>
+                  
+                 <!-- <option ng-show="myDropDown=='Caterham'" value="Chevrolet Beat">Beat</option>
+                  <option ng-show="myDropDown=='Caterham'" value="Chevrolet Captiva">Captiva</option>
+                  <option ng-show="myDropDown=='Caterham'" value="Chevrolet Cruze">Cruze</option>
+                  <option ng-show="myDropDown=='Caterham'" value="Chevrolet Enjoy">Enjoy</option>
+                  <option ng-show="myDropDown=='Caterham'" value="Chevrolet Sail">Sail</option>
+                  <option ng-show="myDropDown=='Caterham'" value="Chevrolet Sail Hatchback">Sail Hatchback</option>
+                  <option ng-show="myDropDown=='Caterham'" value="Chevrolet Spark">Spark</option>
+                  <option ng-show="myDropDown=='Caterham'" value="Chevrolet Tavera">Tavera</option>
+                  <option ng-show="myDropDown=='Caterham'" value="" disabled="">-Upcoming Models-</option>
+                  <option ng-show="myDropDown=='Caterham'" value="Chevrolet Adra">Adra</option>
+                  <option ng-show="myDropDown=='Caterham'" value="Chevrolet Spin">Spin</option>
+                  <option ng-show="myDropDown=='Caterham'" value="Chevrolet Trailblazer">Trailblazer</option>-->
+                  
+                  <option ng-show="myDropDown=='Conquest'" value="Conquest Evade">Evade</option>
+                  
+                  <option ng-show="myDropDown=='Datsun'" value="Datsun GO">GO</option>
+                  <option ng-show="myDropDown=='Datsun'" value="Datsun GO Plus">GO Plus</option>
+                  <option ng-show="myDropDown=='Datsun'" value="" disabled="">-Upcoming Model-</option>
+                  <option ng-show="myDropDown=='Datsun'" value="Datsun RediGO">RediGO</option>
+                  
+                  <option ng-show="myDropDown=='DC'" value="DC Avanti">Avanti</option>
+                  
+                  <option ng-show="myDropDown=='Ferrari'" value="Ferrari 458 Italia">458 Italia</option>
+                  <option ng-show="myDropDown=='Ferrari'" value="Ferrari 458 Spider">458 Spider</option>
+                  <option ng-show="myDropDown=='Ferrari'" value="Ferrari California">California</option>
+                  <option ng-show="myDropDown=='Ferrari'" value="Ferrari F12berlinetta">F12berlinetta</option>
+                  <option ng-show="myDropDown=='Ferrari'" value="Ferrari FF">FF</option>
+                  
+                  <option ng-show="myDropDown=='Fiat'" value="Fiat Avventura">Avventura</option>
+                  <option ng-show="myDropDown=='Fiat'" value="Fiat Grande Punto">Punto EVO</option>
+                  <option ng-show="myDropDown=='Fiat'" value="Fiat Linea">Linea</option>
+                  <option ng-show="myDropDown=='Fiat'" value="Fiat Linea Classic">Linea Classic</option>
+                  <option ng-show="myDropDown=='Fiat'" value="" disabled="">-Upcoming Model-</option>
+                  <option ng-show="myDropDown=='Fiat'" value="Fiat Abarth 595">Abarth 595</option>
+                  
+                  <option ng-show="myDropDown=='Force'" value="Force Gurkha">Gurkha</option>
+                  <option ng-show="myDropDown=='Force'" value="Force One">One SUV</option>
+                  <option ng-show="myDropDown=='Force'" value="" disabled="">-Upcoming Model-</option>
+                  <option ng-show="myDropDown=='Force'" value="Force Viano">Viano</option>
+                  
+                  <!--<option ng-show="myDropDown=='Force'" value="Ford Classic">Classic</option>
+                  <option ng-show="myDropDown=='Force'" value="Ford Ecosport">Ecosport</option>
+                  <option ng-show="myDropDown=='Force'" value="Ford Endeavour">Endeavour</option>
+                  <option ng-show="myDropDown=='Force'" value="Ford Fiesta">Fiesta</option>
+                  <option ng-show="myDropDown=='Force'" value="Ford Figo">Figo</option>
+                  <option ng-show="myDropDown=='Force'" value="" disabled="">-Upcoming Models-</option>
+                  <option ng-show="myDropDown=='Force'" value="Ford B Max">B Max</option>
+                  <option ng-show="myDropDown=='Force'" value="Ford Figo Aspire">Figo Aspire</option>
+                  <option ng-show="myDropDown=='Force'" value="Ford Mondeo">Mondeo</option>
+                  <option ng-show="myDropDown=='Force'" value="Ford Mustang">Mustang</option>-->
+                  
+                  <!--<option value="Honda Amaze">Amaze</option>
+                  <option value="Honda Brio">Brio</option>
+                  <option value="Honda City">City</option>
+                  <option value="Honda CR-V">CR V</option>
+                  <option value="Honda Mobilio">Mobilio</option>
+                  <option value="" disabled="">-Upcoming Models-</option>
+                  <option value="Honda Jazz">Jazz</option>
+                  <option value="Honda New Accord">Accord</option>
+                  <option value="Honda Vision XS 1">Vision XS 1</option>-->
+                  
+                  <!--<option value="Hyundai Elantra">Elantra</option>
+                  <option value="Hyundai EON">EON</option>
+                  <option value="Hyundai Grand i10">Grand i10</option>
+                  <option value="Hyundai i10">i10</option>
+                  <option value="Hyundai i20 Active">i20 Active</option>
+                  <option value="Hyundai i20">Elite i20</option>
+                  <option value="Hyundai Santa Fe">Santa Fe</option>
+                  <option value="Hyundai Verna">4S Fluidic Verna</option>
+                  <option value="Hyundai Xcent">Xcent</option>
+                  <option value="" disabled="">-Upcoming Models-</option>
+                  <option value="Hyundai Creta">Creta</option>
+                  <option value="Hyundai Sonata">Sonata</option>
+                  <option value="Hyundai Tucson">Tucson</option>-->
+                  
+                  <option ng-show="myDropDown=='ICML'" value="ICML Extreme">Extreme</option>
+                  
+                  <option ng-show="myDropDown=='Isuzu'" value="Isuzu MU 7">MU 7</option>
+                  
+                  <option ng-show="myDropDown=='Jaguar'" value="Jaguar F Type">F Type</option>
+                  <option ng-show="myDropDown=='Jaguar'" value="Jaguar XF">XF</option>
+                  <option ng-show="myDropDown=='Jaguar'" value="Jaguar XJ">XJ</option>
+                  <option ng-show="myDropDown=='Jaguar'" value="" disabled="">-Upcoming Models-</option>
+                  <option ng-show="myDropDown=='Jaguar'" value="Jaguar C X17">F-Pace</option>
+                  <option ng-show="myDropDown=='Jaguar'" value="Jaguar XE">XE</option>
+                  
+                  <option ng-show="myDropDown=='Jeep'" value="Jeep Grand Cherokee">Cherokee</option>
+                  <option ng-show="myDropDown=='Jeep'" value="Jeep Wrangler">Wrangler</option>
+                  
+                  <option ng-show="myDropDown=='Koenigsegg'" value="Koenigsegg Agera">Agera</option>
+                  
+                  <option ng-show="myDropDown=='Lamborghini'" value="Lamborghini Aventador">Aventador</option>
+                  <option ng-show="myDropDown=='Lamborghini'" value="Lamborghini Huracan">Huracan</option>
+                  
+                  <option ng-show="myDropDown=='Land Rover'" value="Land Rover Discovery 4">Discovery 4</option>
+                  <option ng-show="myDropDown=='Land Rover'" value="Land Rover Freelander 2">Freelander 2</option>
+                  <option ng-show="myDropDown=='Land Rover'" value="Land Rover Range Rover">Range Rover</option>
+                  <option ng-show="myDropDown=='Land Rover'" value="Land Rover Range Rover Evoque">Range Rover Evoque</option>
+                  <option ng-show="myDropDown=='Land Rover'" value="Land Rover Range Rover Sport">Range Rover Sport</option>
+                  <option ng-show="myDropDown=='Land Rover'" value="" disabled="">-Upcoming Model-</option>
+                  <option ng-show="myDropDown=='Land Rover'" value="Land Rover Discovery Sport">Discovery Sport</option>
+                  
+                  <!--<option value="Mahindra Bolero">Bolero</option>
+                  <option value="Mahindra e2o">e2o</option>
+                  <option value="Mahindra Quanto">Quanto</option>
+                  <option value="Mahindra Scorpio">Scorpio</option>
+                  <option value="Mahindra Thar">Thar</option>
+                  <option value="Mahindra Verito">Verito</option>
+                  <option value="Mahindra Verito Vibe">Verito Vibe</option>
+                  <option value="Mahindra XUV500">XUV 500</option>
+                  <option value="Mahindra Xylo">Xylo</option>
+                  <option value="" disabled="">-Upcoming Models-</option>
+                  <option value="Mahindra Compact XUV">S101</option>
+                  <option value="Mahindra Halo">Halo</option>  -->
+                  
+                  
+                  <option ng-show="myDropDown=='Mahindra Ssangyong'" value="Mahindra Ssangyong Rexton">Rexton</option>
+                  <option ng-show="myDropDown=='Mahindra Ssangyong'" value="" disabled="">-Upcoming Models-</option>
+                  <option ng-show="myDropDown=='Mahindra Ssangyong'" value="Mahindra Ssangyong Korando">Korando</option>
+                  <option ng-show="myDropDown=='Mahindra Ssangyong'" value="Mahindra Ssangyong Rodius">Rodius</option>
+                  <option ng-show="myDropDown=='Mahindra Ssangyong'" value="Mahindra SsangYong Tivoli">Mahindra SsangYong Tivoli</option>
+                  
+                  <!--<option value="Maruti Alto 800">Alto 800</option>
+                  <option value="Maruti Alto K10">Alto K10</option>
+                  <option value="Maruti Celerio">Celerio</option>
+                  <option value="Maruti Ciaz">Ciaz</option>
+                  <option value="Maruti Eeco">Eeco</option>
+                  <option value="Maruti Ertiga">Ertiga</option>
+                  <option value="Maruti Grand Vitara">Grand Vitara</option>
+                  <option value="Maruti Gypsy">Gypsy</option>
+                  <option value="Maruti Omni">Omni</option>
+                  <option value="Maruti Ritz">Ritz</option>
+                  <option value="Maruti Swift Dzire">Swift Dzire</option>
+                  <option value="Maruti Swift">Swift</option>
+                  <option value="Maruti Wagon R">Wagon R</option>
+                  <option value="Maruti Wagon R Stingray">Wagon R Stingray</option>
+                  <option value="" disabled="">-Upcoming Models-</option>
+                  <option value="Maruti SX4 S Cross">S Cross</option>
+                  <option value="Maruti XA Alpha">YBA</option>
+                  <option value="Maruti YRA">YRA</option>-->
+                  
+                  <option ng-show="myDropDown=='Mahindra Ssangyong'" value="Maserati Gran Cabrio">Gran Cabrio</option>
+                  <option ng-show="myDropDown=='Mahindra Ssangyong'" value="Maserati Gran Turismo">Gran Turismo</option>
+                  <option ng-show="myDropDown=='Mahindra Ssangyong'" value="Maserati Quattroporte">Quattroporte</option>
+                  
+                  <option ng-show="myDropDown=='Mercedes-Benz'" value="Mercedes-Benz A Class">A-Class</option>
+                  <option ng-show="myDropDown=='Mercedes-Benz'" value="Mercedes-Benz B Class">B-Class</option>
+                  <option ng-show="myDropDown=='Mercedes-Benz'" value="Mercedes-Benz CLA">CLA-Class</option>
+                  <option ng-show="myDropDown=='Mercedes-Benz'" value="Mercedes-Benz CLS-Class">CLS-Class</option>
+                  <option ng-show="myDropDown=='Mercedes-Benz'" value="Mercedes-Benz E-Class">E-Class</option>
+                  <option ng-show="myDropDown=='Mercedes-Benz'" value="Mercedes-Benz G Class">G-Class</option>
+                  <option ng-show="myDropDown=='Mercedes-Benz'" value="Mercedes-Benz GL-Class">GL-Class</option>
+                  <option ng-show="myDropDown=='Mercedes-Benz'" value="Mercedes-Benz GLA">GLA</option>
+                  <option ng-show="myDropDown=='Mercedes-Benz'" value="Mercedes-Benz GLA Class">GLA-Class</option>
+                  <option ng-show="myDropDown=='Mercedes-Benz'" value="Mercedes-Benz M-Class">M-Class</option>
+                  <option ng-show="myDropDown=='Mercedes-Benz'" value="Mercedes-Benz New C-Class">C-Class</option>
+                  <option ng-show="myDropDown=='Mercedes-Benz'" value="Mercedes-Benz S-Class">S-Class</option>
+                  <option ng-show="myDropDown=='Mercedes-Benz'" value="Mercedes-Benz SLK-Class">SLK-Class</option>
+                  <option ng-show="myDropDown=='Mercedes-Benz'" value="" disabled="">-Upcoming Model-</option>
+                  <option ng-show="myDropDown=='Mercedes-Benz'" value="Mercedes-Benz AMG GT">AMG GT</option>
+                  
+                  <option ng-show="myDropDown=='Mini'" value="Mini 3 DOOR">3 DOOR</option>
+                  <option ng-show="myDropDown=='Mini'" value="Mini 5 DOOR">5 DOOR</option>
+                  <option ng-show="myDropDown=='Mini'" value="Mini Cooper Convertible">Cooper Convertible</option>
+                  <option ng-show="myDropDown=='Mini'" value="Mini Cooper Countryman">Cooper Countryman</option>
+                  <option ng-show="myDropDown=='Mini'" value="" disabled="">-Upcoming Model-</option>
+                  <option ng-show="myDropDown=='Mini'" value="Mini Cooper Clubman">Cooper Clubman</option>
+                  <option ng-show="myDropDown=='Mini'" value="Mitsubishi Pajero">Pajero</option>
+                  
+                  <option ng-show="myDropDown=='Mitsubishi'" value="" disabled="">-Upcoming Model-</option>
+                  <option ng-show="myDropDown=='Mitsubishi'" value="Mitsubishi Mirage">Mirage</option>
+                  
+                  <option ng-show="myDropDown=='Nissan'" value="Nissan Evalia">Evalia</option>
+                  <option ng-show="myDropDown=='Nissan'" value="Nissan Micra Active">Micra Active</option>
+                  <option ng-show="myDropDown=='Nissan'" value="Nissan Micra">Micra</option>
+                  <option ng-show="myDropDown=='Nissan'" value="Nissan Sunny">Sunny</option>
+                  <option ng-show="myDropDown=='Nissan'" value="Nissan Terrano">Terrano</option>
+                  <option ng-show="myDropDown=='Nissan'" value="" disabled="">-Upcoming Model-</option>
+                  <option ng-show="myDropDown=='Nissan'" value="Nissan X-Trail">X-Trail</option>
+                  
+                  <option ng-show="myDropDown=='Peugeot'" value="Peugeot 508">508</option>
+                  <option ng-show="myDropDown=='Peugeot'" value="Porsche 911">911</option>
+                  <option ng-show="myDropDown=='Peugeot'" value="Porsche Boxster">Boxster</option>
+                  <option ng-show="myDropDown=='Peugeot'" value="Porsche Cayenne">Cayenne</option>
+                  <option ng-show="myDropDown=='Peugeot'" value="Porsche Cayman">Cayman</option>
+                  <option ng-show="myDropDown=='Peugeot'" value="Porsche Macan">Macan</option>
+                  <option ng-show="myDropDown=='Peugeot'" value="Porsche Panamera">Panamera</option>
+                  
+                  <option ng-show="myDropDown=='Premier'" value="Premier Rio">Rio</option>
+                  
+                 <!-- <option value="Renault Duster">Duster</option>
+                  <option value="Renault Fluence">Fluence</option>
+                  <option value="Renault Koleos">Koleos</option>
+                  <option value="Renault Lodgy">Lodgy</option>
+                  <option value="Renault Pulse">Pulse</option>
+                  <option value="Renault Scala">Scala</option>
+                  <option value="" disabled="">-Upcoming Models-</option>
+                  <option value="Renault Clio">Clio</option>
+                  <option value="Renault KWID">KWID</option>
+                  <option value="Renault Sandero">Sandero</option>-->
+                  
+                  <!--<option value="Rolls-Royce Ghost">Ghost</option>
+                  <option value="Rolls-Royce Phantom">Phantom</option>
+                  <option value="Rolls-Royce Wraith">Wraith</option>
+                  
+                  <option value="Skoda Octavia">Octavia</option>
+                  <option value="Skoda Rapid">Rapid</option>
+                  <option value="Skoda Superb">Superb</option>
+                  <option value="Skoda Yeti">New  Yeti</option>
+                  <option value="" disabled="">-Upcoming Model-</option>
+                  <option value="Skoda Fabia">Fabia</option>-->
+                  
+                  <!--<option value="Tata Aria">Aria</option>
+                  <option value="Tata Bolt">Bolt</option>
+                  <option value="Tata Indica V2">Indica eV2</option>
+                  <option value="Tata Indica Vista">Vista</option>
+                  <option value="Tata Indigo CS">Indigo eCS</option>
+                  <option value="Tata Manza">Manza</option>
+                  <option value="Tata Movus">Movus</option>
+                  <option value="Tata Nano">Nano</option>
+                  <option value="Tata New Safari">New Safari</option>
+                  <option value="Tata Safari Storme">Safari Storme</option>
+                  <option value="Tata Sumo">Sumo</option>
+                  <option value="Tata Venture">Venture</option>
+                  <option value="Tata Winger">Winger</option>
+                  <option value="Tata Xenon XT">Xenon XT</option>
+                  <option value="Tata Zest">Zest</option>
+                  <option value="" disabled="">-Upcoming Models-</option>
+                  <option value="Tata Kite Hatch">Kite Hatch</option>
+                  <option value="Tata Kite Sedan">Kite Sedan</option>
+                  <option value="Tata Nexon">Hexa</option>-->
+                  
+                  <!--<option value="Toyota Camry">Camry</option>
+                  <option value="Toyota Corolla Altis">Corolla Altis</option>
+                  <option value="Toyota Etios Cross">Etios Cross</option>
+                  <option value="Toyota Etios">Etios</option>
+                  <option value="Toyota Etios Liva">Etios Liva</option>
+                  <option value="Toyota Fortuner">Fortuner</option>
+                  <option value="Toyota Innova">Innova</option>
+                  <option value="Toyota Land Cruiser">Land Cruiser 200</option>
+                  <option value="Toyota Land Cruiser Prado">Land Cruiser Prado</option>
+                  <option value="Toyota Prius">Prius</option>
+                  <option value="" disabled="">-Upcoming Model-</option>
+                  <option value="Toyota Vios">Vios</option>-->
+                  
+                  <!--<option value="Volkswagen CrossPolo">Cross Polo</option>
+                  <option value="Volkswagen Jetta">Jetta</option>
+                  <option value="Volkswagen Polo">Polo</option>
+                  <option value="Volkswagen Vento">Vento</option>
+                  <option value="" disabled="">-Upcoming Models-</option>
+                  <option value="Volkswagen Passat">Passat</option>
+                  <option value="Volkswagen Taigun">Taigun</option>
+                  <option value="Volkswagen Tiguan">Tiguan</option>-->
+                  
+                  <option ng-show="myDropDown=='Volvo'" value="Volvo S 80">S 80</option>
+                  <option ng-show="myDropDown=='Volvo'" value="Volvo S60">S60</option>
+                  <option ng-show="myDropDown=='Volvo'" value="Volvo V40 Cross Country">V40 Cross Country</option>
+                  <option ng-show="myDropDown=='Volvo'" value="Volvo V40">V40</option>
+                  <option ng-show="myDropDown=='Volvo'" value="Volvo XC 90">XC 90</option>
+                  <option ng-show="myDropDown=='Volvo'" value="Volvo XC60">XC60</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group  has-warning">
+              <label class="col-md-3 control-label"> Model Year</label>
+              <div class="col-md-6">
+                <input type="text" placeholder="Model Year" class="form-control">
+              </div>
+            </div>
+            <div class="form-group has-warning">
+              <label class="col-md-3 control-label">Email Address</label>
+              <div class="col-md-6">
+                <div class="input-icon right"> <i class="fa fa-info-circle tooltips" data-original-title="Email address" data-container="body"></i>
+                  <input type="email" placeholder="Email" class="form-control">
+                </div>
+              </div>
+            </div>
+            <div class="form-group has-warning">
+              <label class="col-md-3 control-label">Cell Phone</label>
+              <div class="col-md-6">
+                <div class="input-icon right"> <i class="fa fa-phone-square tooltips" data-original-title="Enter Phone Number" data-container="body"></i>
+                  <input type="text" placeholder="Phone" class="form-control">
+                </div>
+              </div>
+            </div>
+            <div class="form-group has-warning">
+              <label class="col-md-3 control-label">Vehicle Registration No</label>
+              <div class="col-md-6">
+                <div class="input-icon right"> <i class="fa fa-info-circle tooltips" data-original-title="Vehicle Registration No" data-container="body"></i>
+                  <input type="text" placeholder="Vehicle Registration No" class="form-control">
+                </div>
+              </div>
+            </div>
+            <div class="form-group last">
+              <label class="col-md-3 control-label"></label>
+              <div class="col-md-4">
+                <p class="form-control-static"> Below is optional Fields.. </p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-3 control-label">Vehicle Variant</label>
+              <div class="col-md-6">
+                <input type="text" placeholder="Vehicle Variant" class="form-control">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-3 control-label"> Vehicle Type</label>
+              <div class="col-md-6">
+                <select class="form-control select2me" data-placeholder="Vehicle Type">
+                  <option value=""></option>
+                  <option value="1">All Vehicle Types</option>
+                  <option value="hatchback">Hatchback</option>
+                  <option value="sedans">Sedans</option>
+                  <option value="muv">MUV</option>
+                  <option value="suv">SUV</option>
+                  <option value="luxury">Luxury</option>
+                  <option value="hybrids">Hybrids</option>
+                  <option value="minivans">Minivans</option>
+                  <option value="convertibles">Convertibles</option>
+                  <option value="coupe">Coupe</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-3 control-label">City</label>
+              <div class="col-md-6">
+                <div class="input-icon right"> <i class="fa fa-info-circle tooltips" data-original-title="Email address" data-container="body"></i>
+                  <input type="text" placeholder="City" class="form-control">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-3 control-label"> Seating Capacity</label>
+              <div class="col-md-6">
+                <input type="text" placeholder="Seating Capacity" class="form-control">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-3 control-label"> Fuel Tank Capacity</label>
+              <div class="col-md-6">
+                <input type="text" placeholder="Fuel Tank Capacity" class="form-control">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-3 control-label">Fuel Type</label>
+              <div class="col-md-6">
+                <select class="form-control select2me" data-placeholder="Fuel Type">
+                  <option value=""></option>
+                  <option>Diesel</option>
+                  <option>Petrol</option>
+                  <option>CNG</option>
+                  <option>LPG</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-3 control-label">Manual/Automatic</label>
+              <div class="col-md-9">
+                <div class="clearfix">
+                  <div class="btn-group" data-toggle="buttons">
+                    <label class="btn blue">
+                      <input type="radio" class="toggle">
+                      Manual </label>
+                    <label class="btn blue active">
+                      <input type="radio" class="toggle">
+                      Automatic </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-3 control-label"> Engine Displacement(cc)</label>
+              <div class="col-md-6">
+                <select class="form-control select2me">
+                  <option>1500</option>
+                  <option>1600</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-actions">
+            <div class="row">
+              <div class="col-md-offset-3 col-md-9">
+                <button type="submit" class="btn green">Submit</button>
+                <button type="reset" class="btn default">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- END SAMPLE FORM PORTLET--> 
+    
+  </div>
+</div>

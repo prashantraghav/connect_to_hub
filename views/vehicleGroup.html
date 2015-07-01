@@ -1,0 +1,127 @@
+<div class="page-bar">
+  <ul class="page-breadcrumb">
+    <li> <i class="fa fa-home"></i> <a href="#/dashboard">Home</a> <i class="fa fa-angle-right"></i> </li>
+    <li> <a href="#/vehicleGroup">Vehicle Group</a> </li>
+  </ul>
+</div>
+
+<div class="row">
+  <div class="col-md-12 col-sm-12 col-xs-12"> 
+    <!-- BEGIN SAMPLE FORM PORTLET-->
+    <div class="portlet light ">
+      <div class="portlet-title">
+        <div class="caption"> <i class="fa fa-gift"></i> Add/Edit Vehicle Group</div>
+        
+      </div>
+      <div class="portlet-body form">
+        <form class="form-horizontal" role="form">
+          <div class="form-body"  ng-controller="AddVehicleGroup">
+            <div class="form-group">
+              <label class="col-md-3 control-label">Add New Group</label>
+              <div class="col-md-6">
+                <select class="form-control select2me" data-placeholder="Group">
+                	<option value=""></option>
+                  	<option value="On Lease">On Lease</option>
+            		<option value="My Own">My Own</option>
+                    <option value="Old Cars">Old Cars</option>
+            	</select>
+          
+              </div>
+              
+            </div>
+            
+            <div class="form-group">
+											<label class="control-label col-md-3">Multi-Value Select</label>
+											<div class="col-md-4">
+												<select id="select2_sample2" class="form-control select2" multiple>
+													<optgroup label="NFC EAST">
+													<option>Dallas Cowboys</option>
+													<option>New York Giants</option>
+													<option>Philadelphia Eagles</option>
+													<option>Washington Redskins</option>
+													</optgroup>
+													<optgroup label="NFC NORTH">
+													<option>Chicago Bears</option>
+													<option>Detroit Lions</option>
+													<option>Green Bay Packers</option>
+													<option>Minnesota Vikings</option>
+													</optgroup>
+													<optgroup label="NFC SOUTH">
+													<option>Atlanta Falcons</option>
+													<option>Carolina Panthers</option>
+													<option>New Orleans Saints</option>
+													<option>Tampa Bay Buccaneers</option>
+													</optgroup>
+													<optgroup label="NFC WEST">
+													<option>Arizona Cardinals</option>
+													<option>St. Louis Rams</option>
+													<option>San Francisco 49ers</option>
+													<option>Seattle Seahawks</option>
+													</optgroup>
+													<optgroup label="AFC EAST">
+													<option>Buffalo Bills</option>
+													<option>Miami Dolphins</option>
+													<option>New England Patriots</option>
+													<option>New York Jets</option>
+													</optgroup>
+													<optgroup label="AFC NORTH">
+													<option>Baltimore Ravens</option>
+													<option>Cincinnati Bengals</option>
+													<option>Cleveland Browns</option>
+													<option>Pittsburgh Steelers</option>
+													</optgroup>
+													<optgroup label="AFC SOUTH">
+													<option>Houston Texans</option>
+													<option>Indianapolis Colts</option>
+													<option>Jacksonville Jaguars</option>
+													<option>Tennessee Titans</option>
+													</optgroup>
+													<optgroup label="AFC WEST">
+													<option>Denver Broncos</option>
+													<option>Kansas City Chiefs</option>
+													<option>Oakland Raiders</option>
+													<option>San Diego Chargers</option>
+													</optgroup>
+												</select>
+											</div>
+										</div>
+            
+            
+            
+            <div class="form-group">
+              <label class="col-md-3 hidden-xs control-label"></label>
+              <div class="col-md-6">
+                 <button class="btn green" ng-click="add()">Add New Vehicles</button>
+              </div>
+            </div>
+           
+            
+             <div class="form-group has-feedback" ng-repeat="item in items">
+             	<label class="col-md-3 hidden-xs control-label"></label>
+                <div class="col-md-6 ">
+             		<input type="text" class="form-control hasclear" placeholder="Add New Vehicles" >
+                    <span class="clearer glyphicon glyphicon-remove-circle form-control-feedback"></span>
+        		</div>
+          </div>
+          <div class="form-actions">
+            <div class="row">
+              <div class="col-md-offset-3 col-md-9">
+                <button type="submit" class="btn green">Submit</button>
+                <button type="reset" class="btn default">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- END SAMPLE FORM PORTLET--> 
+    
+  </div>
+</div>
+
+
+<script type="text/javascript">
+ ComponentsDropdowns.init();
+</script>
+
+
