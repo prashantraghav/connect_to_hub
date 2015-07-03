@@ -14,74 +14,42 @@
   <!-- BEGIN DASHBOARD STATS -->
   <!-- END DASHBOARD STATS -->
 
-					<div class="row">
-						<div class="col-md-12">
-							<!-- BEGIN CHART PORTLET-->
-							<div class="portlet light bordered">
-								<div class="portlet-title">
-									<div class="caption">
-										<i class="icon-bar-chart font-green-haze"></i>
-										<span class="caption-subject bold uppercase font-green-haze"> Line & Area</span>
-										<span class="caption-helper">duration on value axis</span>
-									</div>
-									<div class="tools">
-										<a href="javascript:;" class="collapse">
-										</a>
-										<a href="#portlet-config" data-toggle="modal" class="config">
-										</a>
-										<a href="javascript:;" class="reload">
-										</a>
-										<a href="javascript:;" class="fullscreen">
-										</a>
-										<a href="javascript:;" class="remove">
-										</a>
-									</div>
-								</div>
-								<div class="portlet-body">
-									<div id="chart_2" class="chart" style="height: 400px;">
-									</div>
-								</div>
-							</div>
-							<!-- END CHART PORTLET-->
-						</div>
-					</div>
-					<!-- END ROW -->
-
-
   <div class="row">
     <div class="col-md-12">
-      <!-- BEGIN Portlet PORTLET-->
-      <div class="portlet light">
+      <!-- BEGIN CHART PORTLET-->
+      <div class="portlet light bordered">
         <div class="portlet-title">
-          <div class="caption font-dark">
-            <span class="caption-subject bold uppercase">Distance</span>
-            <span class="caption-helper">distance stats...</span>
+          <div class="caption">
+            <i class="icon-bar-chart font-green-haze"></i>
+            <span class="caption-subject bold uppercase font-green-haze"> History Graph</span>
+            <span class="caption-helper"></span>
           </div>
-          <div class="actions">
-            <!--<a href="#" class="btn btn-circle btn-default btn-sm"><i class="fa fa-pencil"></i> Edit </a>
-                <a href="#" class="btn btn-circle btn-default btn-sm"><i class="fa fa-plus"></i> Add </a> -->
-            <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="#"></a>
+          <div class="tools">
+            <a href="javascript:;" class="collapse"></a>
+            <a href="javascript:;" class="reload"></a>
+            <a href="javascript:;" class="fullscreen"></a>
           </div>
         </div>
         <div class="portlet-body">
-          <!-- <div id="CSSAnimationChart" class="CSSAnimationChart"></div> -->
+          <div id="chart_2" class="chart" style="height: 400px;">
+          </div>
         </div>
       </div>
-      <!-- END PORTLET-->
+      <!-- END CHART PORTLET-->
     </div>
   </div>
-
+  <!-- END ROW -->
 
   <div class="row">
     <div class="col-md-12 margin-top-10 margin-bottom-10 clearfix">
       <div class="col-md-3">
         <p class="form-control-static">
-          Show Route History From:
+        Show Route History From:
         </p>
       </div>
 
       <div class="col-md-6">
-        <div class="input-group date-picker input-daterange" data-date="10/11/2012" data-date-format="mm/dd/yyyy">
+        <div class="input-group date-picker input-daterange" data-date="10/11/2012" data-date-format="dd/mm/yyyy">
           <input type="text" class="form-control" name="from" placeholder="Date From">
           <span class="input-group-addon">to </span>
           <input type="text" class="form-control" name="to" placeholder="Date to">
@@ -147,17 +115,17 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td> {{trip.accOnOff}} </th>
-            <td> {{trip.source}} </th>
-            <td> {{trip.destination}} </th>
-            <td> {{trip.startTime}} </th>
-            <td> {{trip.endTime}} </th>
-            <td> {{trip.duration}} </th>
-            <td> {{trip.kms}} </th>
-            <td> {{trip.fuelConsumed}} </th>
-            <td> {{trip.alarms}} </th>
-          </tr>
+        <tr>
+          <td> {{trip.accOnOff}} </th>
+          <td> {{trip.source}} </th>
+          <td> {{trip.destination}} </th>
+          <td> {{trip.startTime}} </th>
+          <td> {{trip.endTime}} </th>
+          <td> {{trip.duration}} </th>
+          <td> {{trip.kms}} </th>
+          <td> {{trip.fuelConsumed}} </th>
+          <td> {{trip.alarms}} </th>
+        </tr>
         </tbody>
       </table>
     </div>
@@ -165,8 +133,6 @@
 </div>
 <!-- END MAIN CONTENT --> 
 <script>
-  //Index.init();
-  ComponentsPickers.init();
-  TableAdvanced.init();
-  ChartsAmcharts.init();
+ComponentsPickers.init();
+TableAdvanced.init();
 </script> 

@@ -39,16 +39,21 @@ cth.controller('SingleDeviceHistoryController', ['$scope', '$http', '$interval',
     $scope.map.setZoom(10);
   }
 
+  $scope.makeChart = function(){
+    ChartsAmcharts.init($scope.chart);
+  }
 
   $scope.refresh = function() {
     url = SINGLE_DEVICE_HISTORY_DATA_URL+'?trip='+$scope.trip_id;
     $http.get(url).success(function(data) {
       $scope.trip = data.trip;
       $scope.routes = data.routes;
+      $scope.chart = data.chart
       $.each($scope.routes, function(i, route){
         $scope.path.push([route.lat, route.lng]);
       });
       $scope.drawMap();
+      $scope.makeChart();
     });
   };
 
