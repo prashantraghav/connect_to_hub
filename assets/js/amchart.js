@@ -6,7 +6,7 @@ var ChartsAmcharts = function() {
   var fuel_avg_axis = {"id": "fuelAxis", "axisAlpha": 0, "gridAlpha": 0, "inside": false, "position": "right", "title": "fuel"};
   var distance_graph = {"alphaField":"alpha",
     "balloonText":"[[value]]kms",
-    "lineColor":"#FFFF00",
+    //"lineColor":"#FFFF00",
     "dashLengthField":"dashLength",
     "fillAlphas":0.7,
     "legendPeriodValueText":"total:[[value.sum]]kms",

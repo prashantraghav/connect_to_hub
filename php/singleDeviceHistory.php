@@ -23,9 +23,9 @@ $routes = array(
 $chart_data = array(
                array('date'=>'2012-01-01', 'distance'=>120, 'alert'=>10,'fuel'=>'40'),
                array('date'=>'2012-01-02', 'distance'=>50, 'alert'=>5,  'fuel'=>'10'),
-               array('date'=>'2012-01-03', 'distance'=>20, 'alert'=>40, 'fuel'=>'90'),
+               array('date'=>'2012-01-03', 'distance'=>20, 'alert'=>40, 'fuel'=>'15'),
                array('date'=>'2012-01-04', 'distance'=>90, 'alert'=>50, 'fuel'=>'40'),
-               array('date'=>'2012-01-05', 'distance'=>30, 'alert'=>30, 'fuel'=>'50'),
+               array('date'=>'2012-01-05', 'distance'=>30, 'alert'=>30, 'fuel'=>'10'),
                array('date'=>'2012-01-06', 'distance'=>90, 'alert'=>10, 'fuel'=>'30'),
                array('date'=>'2012-01-07', 'distance'=>100,'alert'=>60, 'fuel'=>'25'),
                array('date'=>'2012-01-08', 'distance'=>80, 'alert'=>40, 'fuel'=>'40'),
