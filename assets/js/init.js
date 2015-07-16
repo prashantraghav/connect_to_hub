@@ -68,7 +68,7 @@ cth.controller('QuickSidebarController', ['$scope', function($scope) {
 
 cth.controller('ThemePanelController', ['$scope', function($scope) {
   $scope.$on('$includeContentLoaded', function() {
-    Demo.init(); // init theme panel
+    //Demo.init(); // init theme panel
   });
 }]);
 

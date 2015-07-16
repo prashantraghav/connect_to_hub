@@ -14,12 +14,18 @@ cth.controller('DashboardController', ['$scope', '$http', '$interval', function(
       $scope.devices = data.devices;
       $scope.map.removeMarkers();
       $.each($scope.devices, function(i, dev){
-        $scope.map.addMarker({lat: dev.Lat, lng: dev.Lng, title: dev.Vehicle, icon: AGILE_MAP.marker.icon})
+        $scope.map.addMarker({lat: dev.Lat, lng: dev.Lng, title: dev.Vehicle, icon: AGILE_MAP.marker.icon, click: function(e){ $scope.infoDialog(dev.DeviceID)}});
       });
     });
   };
 
-  $scope.refresh();
+  $scope.infoDialog = function(device_id){
+    url = SINGLE_DEVICE_DATA_URL+'?device='+$scope.device_id
+    $http.get(url).success(function(data) {
+      $scope.dev = data.device;
+      $("#fleet_dialog").trigger('click');
+    });
+  };
 
   $interval( $scope.refresh, DATA_INTERVAL_TIME);
 }]);

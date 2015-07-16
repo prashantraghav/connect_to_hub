@@ -1,4 +1,4 @@
-var AGILE_MAP = { initLat: 28.4962, initLng: 77.536, initZoom: 4,
+var AGILE_MAP = { initLat: 28.4962, initLng: 77.536, initZoom: 7,
                   marker:{ icon: "http://google-maps-icons.googlecode.com/files/car.png"},
                   polyline: {
                     strokeColor: '#0B0B61',
