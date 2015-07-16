@@ -1,5 +1,5 @@
 <?php
-$data = array('stats'=>array('alerts'=> 15, 'totalKms'=> 150, 'overall_avg'=> 25, 'totalLandingTime'=> 15, 'utilization'=> 40 ));
+$data = array('stats'=>array('unseen_alerts'=> 15, 'totalKms'=> 150, 'overall_avg'=> 25, 'totalLandingTime'=> 15, 'utilization'=> 40 ));
 
 $device1 = array("DeviceID"=>"1",
                   "Vehicle"=>"UP 13 N 4989",

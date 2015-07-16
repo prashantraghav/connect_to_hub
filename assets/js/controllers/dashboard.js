@@ -27,5 +27,7 @@ cth.controller('DashboardController', ['$scope', '$http', '$interval', function(
     });
   };
 
-  $interval( $scope.refresh, DATA_INTERVAL_TIME);
+  $scope.refresh();
+
+  $interval($scope.refresh, DATA_INTERVAL_TIME);
 }]);

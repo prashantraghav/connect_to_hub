@@ -11,6 +11,7 @@ var DATA_INTERVAL_TIME = 2000 //2 seconds
 
 //API_URLS
 var BASE_URL = "http://localhost/connect_to_hub/php/";
+var ALERTS_DATA_URL = BASE_URL +'alerts.php';
 var DASHBOARD_DATA_URL = BASE_URL +'data.php';
 var SINGLE_DEVICE_DATA_URL = BASE_URL +'singleDevice.php';
 var SINGLE_DEVICE_HISTORY_DATA_URL = BASE_URL +'singleDeviceHistory.php';

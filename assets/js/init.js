@@ -14,6 +14,8 @@ cth.config(['$stateProvider', '$urlRouterProvider', function($state, $urlRouter)
     .state('dashboard', this.getRouteState('dashboard'))
     .state('singleDevice', this.getRouteState('singleDevice'))
     .state('singleDeviceHistory', this.getRouteState('singleDeviceHistory'))
+    .state('alerts', this.getRouteState('alerts'))
+
     .state('addDevice', this.getRouteState('addDevice'))
     .state('addEmail', this.getRouteState('addEmail'))
     .state('vehicleGroup', this.getRouteState('vehicleGroup'))
@@ -50,6 +52,8 @@ cth.controller('HeaderController', ['$scope', function($scope) {
   $scope.$on('$includeContentLoaded', function() {
     Layout.initHeader();
   });
+
+  
 }]);
 
 cth.controller('SidebarController', ['$scope', function($scope) {

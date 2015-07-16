@@ -4,7 +4,7 @@
 <div class="page-bar">
   <ul class="page-breadcrumb">
     <li> <i class="fa fa-home"></i> <a href="#/dashboard.html">Home</a> <i class="fa fa-angle-right"></i> </li>
-    <li> <a href="#/dashboard.html">Fleet Dashboard</a> </li>
+    <li> <a href="#/dashboard.html">Dashboard</a> </li>
   </ul>
 </div>
 
@@ -14,46 +14,65 @@
 <div ng-controller="DashboardController"> 
   <!-- BEGIN DASHBOARD STATS -->
   <div class="row">
-    
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+    <div class="col-sm-2">
       <div class="dashboard-stat blue-madison ">
-        <div class="visual"> <i class="fa fa-comments"></i> </div>
+        <div class="visual"> <i class="icon-bell"></i> </div>
         <div class="details">
-          <div class="number">{{stats.alerts}} </div>
+          <div class="number">{{stats.unseen_alerts}} </div>
           <div class="desc"> Alerts </div>
         </div>
-        <a class="more" href="#"> View more <i class="m-icon-swapright m-icon-white"></i> </a> </div>
+        <a class="more" href="#alerts"> View more <i class="m-icon-swapright m-icon-white"></i> </a> </div>
     </div>
     
-    <div class="col-lg-3">
+    <div class="col-sm-2">
       <div class="dashboard-stat red-intense ">
         <div class="visual"> <i class="fa fa-bar-chart-o"></i> </div>
         <div class="details">
-          <div class="number"> Total Kms :{{stats.totalKms}} </div>
-          <div class="desc"> Overall Average: {{stats.overall_avg}} </div>
+          <div class="number">{{stats.totalKms}} </div>
+          <div class="desc"> Total Kms</div>
         </div>
         <a class="more" href="#"> View more <i class="m-icon-swapright m-icon-white"></i> </a> </div>
     </div>
     
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+    <div class="col-sm-2">
       <div class="dashboard-stat green-haze ">
         <div class="visual"> <i class="fa fa-shopping-cart"></i> </div>
         <div class="details">
-          <div class="number"> {{stats.totalLandingTime}} Hrs </div>
+          <div class="number"> {{stats.totalLandingTime}} <small>Hrs </small></div>
           <div class="desc"> Ideling Time </div>
         </div>
         <a class="more" href="#"> View more <i class="m-icon-swapright m-icon-white"></i> </a> </div>
     </div>
 
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+    <div class="col-sm-2">
       <div class="dashboard-stat purple-plum ">
         <div class="visual"> <i class="fa fa-globe"></i> </div>
         <div class="details">
-          <div class="number"> {{stats.utilization}}% </div>
-          <div class="desc"> Utilization % Per Day </div>
+          <div class="number"> {{stats.utilization}} <small>%</small> </div>
+          <div class="desc"> Utilization Per Day </div>
         </div>
         <a class="more" href="#"> View more <i class="m-icon-swapright m-icon-white"></i> </a> </div>
     </div>
+
+    <div class="col-sm-2">
+      <div class="dashboard-stat blue-madison">
+        <div class="visual">
+          <i class="fa fa-briefcase fa-icon-medium"></i>
+        </div>
+        <div class="details">
+          <div class="number">
+            {{stats.overall_avg}}
+          </div>
+          <div class="desc">
+           Overall Average:
+          </div>
+        </div>
+        <a class="more" href="javascript:;">
+          View more <i class="m-icon-swapright m-icon-white"></i>
+        </a>
+      </div>
+    </div>
+
 
   </div>
   
@@ -87,27 +106,28 @@
         </div> 
         <div class="portlet-body" >  
           <div class="mx-height-300"> 
-            <a ng-repeat="device in devices" href="#singleFleet?device={{device.FleetID}}" class="btn green btn-block margin-left-0">{{device.Vehicle}}</a> 
+            <a ng-repeat="device in devices" href="#singleDevice?device={{device.DeviceID}}" class="btn green btn-block margin-left-0">{{device.Vehicle}}</a> 
           </div>  
         </div> 
       </div> 
     </div> 
   </div> 
 
-  <a class="btn default hide" id="fleet_dialog" data-toggle="modal" href="#dialog"> View Demo </a></li>
-  <div id="dialog" class="modal fade" tabindex="-1" aria-hidden="true" >
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-          <h4 class="modal-title"><b>Fleet Details ({{dev.Vehicle}})</b></h4>
-        </div>
-        <div class="modal-body">
-          <div class="scroller" style="height:300px" data-always-visible="1" data-rail-visible1="1">
-            <div class="row">
-              <div class="col-md-12">
-                <table class="table table-striped table-bordered table-hover">
-                  <tbody>      
+  <div class="row">
+    <a class="btn default hide" id="fleet_dialog" data-toggle="modal" href="#dialog"> View Demo </a></li>
+    <div id="dialog" class="modal fade" tabindex="-1" aria-hidden="true" >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+            <h4 class="modal-title"><b>Fleet Details ({{dev.Vehicle}})</b></h4>
+          </div>
+          <div class="modal-body">
+            <div class="scroller" style="height:300px" data-always-visible="1" data-rail-visible1="1">
+              <div class="row">
+                <div class="col-md-12">
+                  <table class="table table-striped table-bordered table-hover">
+                    <tbody>      
                     <tr><th style="width:40%"> Fleet ID </th><td> {{dev.DeviceID}} </td></tr>
                     <tr><th style="width:40%"> Vehicle </th><td> {{dev.Vehicle}}</td></tr>
                     <tr><th style="width:40%"> Info Recived Time </th><td> {{dev.RecivedTime}} </td></tr>
@@ -118,19 +138,19 @@
                     <tr><th style="width:40%"> Latitude </th><td> {{dev.Lat}}</td></tr>
                     <tr><th style="width:40%"> Longitude </th><td> {{dev.Lng}} </td></tr>
                     <tr><th style="width:40%"> Temprature </th><td> {{dev.Temprature}} </td></tr>
-                  </tbody>
-                </table>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" data-dismiss="modal" class="btn green">Close</button>
+          <div class="modal-footer">
+            <button type="button" data-dismiss="modal" class="btn green">Close</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
 
 
   <div class="portlet box blue-madison">

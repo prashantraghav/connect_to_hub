@@ -1,0 +1,49 @@
+  <div class="page-bar">
+    <ul class="page-breadcrumb">
+      <li> <i class="fa fa-home"></i> <a href="#/dashboard.html">Home</a> <i class="fa fa-angle-right"></i> </li>
+      <li> <a href="#/dashboard.html">Alerts</a> </li>
+    </ul>
+  </div>
+
+<h3 class="page-title"> Fleet Alerts </h3>
+
+<div class="row">
+  <div ng-controller="AlertsController">
+    <div class="portlet box blue-madison">
+      <div class="portlet-title">
+        <div class="caption"> <i class="fa fa-globe"></i> Fleet Alerts </div>
+        <div class="tools"> <a href="javascript:;" class="reload"> </a> <a href="javascript:;" class="remove"> </a> </div>
+      </div>
+      <div class="portlet-body">
+        <table class="table table-striped table-bordered table-hover">
+          <thead>
+            <tr>
+              <th> Fleet ID </th>
+              <th> Vehicle </th>
+              <th> Recived Time </th>
+              <th> Latitude </th>
+              <th> Longitude </th>
+              <th> GPS Fix Status </th>
+              <th> Alarm Description </th>
+              <th> Alarm Value</th>
+              <th> seen </th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr class="{{(alert.seen) ? '' : 'warning'}}"ng-repeat="alert in alerts">
+            <td>{{alert.DeviceID}}</td>
+            <td>{{alert.Vehicle}}</td>
+            <td>{{alert.RecivedTime}}</td>
+            <td>{{alert.Lat}}</td>
+            <td>{{alert.Lng}}</td>
+            <td>{{alert.GPSFixStatus}}</td>
+            <td>{{alert.AlarmDescription}}</td>
+            <td>{{alert.AlarmValue}}<small>{{alert.AlarmUnit}}</small></td>
+            <td>{{(alert.seen) ? 'seen' : 'unseen'}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
