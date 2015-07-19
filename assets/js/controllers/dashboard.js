@@ -6,7 +6,8 @@
 cth.controller('DashboardController', ['$scope', '$http', '$interval', function($scope, $http, $interval){
   
   $scope.map = new GMaps({div: '#gmap_marker', lat: AGILE_MAP.initLat, lng: AGILE_MAP.initLng, zoom: AGILE_MAP.initZoom});
-  
+  $scope.infoWindow = new google.maps.InfoWindow;
+
   $scope.refresh = function() {
     url = DASHBOARD_DATA_URL;
     $http.get(url).success(function(data) {
@@ -14,18 +15,34 @@ cth.controller('DashboardController', ['$scope', '$http', '$interval', function(
       $scope.devices = data.devices;
       $scope.map.removeMarkers();
       $.each($scope.devices, function(i, dev){
-        $scope.map.addMarker({lat: dev.Lat, lng: dev.Lng, title: dev.Vehicle, icon: AGILE_MAP.marker.icon, click: function(e){ $scope.infoDialog(dev.DeviceID)}});
+        $scope.map.addMarker({
+          lat: dev.Lat, 
+          lng: dev.Lng, 
+          title: dev.Vehicle, 
+          icon: AGILE_MAP.marker.icon, 
+          infoWindow: {
+            content: $scope.infoWindowContent(dev),
+          },
+        });
       });
     });
   };
 
-  $scope.infoDialog = function(device_id){
-    url = SINGLE_DEVICE_DATA_URL+'?device='+$scope.device_id
-    $http.get(url).success(function(data) {
-      $scope.dev = data.device;
-      $("#fleet_dialog").trigger('click');
-    });
-  };
+    $scope.infoWindowContent = function(dev){
+      return '<div style="color:black">'
+             +'<b>Fleet ID </b> '+dev.DeviceID+'<br/>'
+             +'<b>Vehicle:</b> '+dev.Vehicle+' <br/>'
+             +'<b>RecivedTime:</b> '+dev.RecivedTime+'<br/>'
+             +'<b>Acc On/Off:</b> '+dev.AccOnOff+'<br/>'
+             +'<b>Temprature:</b> '+dev.Temprature+'<br/>'
+             +'<b>Speed:</b> '+dev.Speed+' <br/>'
+             +'<b>RPM:</b> '+dev.Rpm+'<br/>'
+             +'<b>Location:</b> '+dev.Location+'<br/>'
+             +'<b>Latitude:</b> '+dev.Lat+'<br/>'
+             +'<b>Longitude:</b> '+dev.Lng+'<br/>' 
+             +'</div>';
+    }
+
 
   $scope.refresh();
 

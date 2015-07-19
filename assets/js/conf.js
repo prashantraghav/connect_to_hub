@@ -7,7 +7,7 @@ var AGILE_MAP = { initLat: 28.4962, initLng: 77.536, initZoom: 7,
                   }
                 }
 
-var DATA_INTERVAL_TIME = 2000 //2 seconds
+var DATA_INTERVAL_TIME = 60000 //60 seconds
 
 //API_URLS
 var BASE_URL = "http://localhost/connect_to_hub/data/";
