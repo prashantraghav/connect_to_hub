@@ -44,6 +44,17 @@ cth.controller('DashboardController', ['$scope', '$http', '$interval', function(
     }
 
 
+    $scope.goToSingleDevicePage = function(device_id){
+      window.location.href="#singleDevice?device="+device_id
+    }
+
+
+  $scope.mapFocus = function(lat, lng){
+    var myLatlng = new google.maps.LatLng(lat, lng);
+    $scope.map.panTo(myLatlng);
+  };
+
+
   $scope.refresh();
 
   $interval($scope.refresh, DATA_INTERVAL_TIME);

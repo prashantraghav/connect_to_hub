@@ -117,29 +117,18 @@
                 </tr>
               </thead>
               <tbody>
-              <tr ng-repeat="device in devices" class="fleetinforow" fleet-id="{{device.DeviceID}}">
-                <td><small>{{device.Vehicle}}<small></td>
+                 <tr ng-repeat="device in devices" ng-click="goToSingleDevicePage(device.DeviceID)" ng-mouseover="mapFocus(device.Lat, device.Lng)">
+                    <td><small>{{device.Vehicle}}<small></td>
                     <td><small>{{device.Location}}</small></td>
                     <td><small>{{device.Speed}}</small></td>
                     <td><small>{{device.Temprature}}</small></td>
                   </tr>
-                  </tbody>
+                </tbody>
                 </table>
-                <a ng-repeat="device in devices" href="#singleDevice?device={{device.DeviceID}}" class="btn green btn-block margin-left-0 hide">
-                  {{device.Vehicle}} <small>{{device.Speed}} @ {{device.Location}}</small>
-                </a> 
               </div>  
             </div> 
           </div> 
         </div> 
       </div> 
 
-    <script>
-      //TableAdvanced.init();
-    $(document).ready(function(){
-      $('body').on('click', '.fleetinforow', function(e){
-        window.location.href="#singleDevice?device="+$(this).attr('fleet-id');
-      });
-    });
-    </script>
-    <!-- END MAIN CONTENT --> 
+      <!-- END MAIN CONTENT --> 
