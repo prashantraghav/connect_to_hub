@@ -31,15 +31,11 @@ cth.controller('DashboardController', ['$scope', '$http', '$interval', function(
     $scope.infoWindowContent = function(dev){
       return '<div style="color:black">'
              +'<b>Fleet ID </b> '+dev.DeviceID+'<br/>'
-             +'<b>Vehicle:</b> '+dev.Vehicle+' <br/>'
+             +'<b>Vehicle:</b> '+dev.Vehicle+' ('+dev.Brand+')<br/>'
              +'<b>RecivedTime:</b> '+dev.RecivedTime+'<br/>'
              +'<b>Acc On/Off:</b> '+dev.AccOnOff+'<br/>'
-             +'<b>Temprature:</b> '+dev.Temprature+'<br/>'
              +'<b>Speed:</b> '+dev.Speed+' <br/>'
-             +'<b>RPM:</b> '+dev.Rpm+'<br/>'
              +'<b>Location:</b> '+dev.Location+'<br/>'
-             +'<b>Latitude:</b> '+dev.Lat+'<br/>'
-             +'<b>Longitude:</b> '+dev.Lng+'<br/>' 
              +'</div>';
     }
 

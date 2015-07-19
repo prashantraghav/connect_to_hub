@@ -84,16 +84,17 @@
       <div class="portlet solid green">
         <div class="portlet-title">
           <div class="caption"> <i class="fa fa-gift"></i> Fleet Location </div>
-          <div class="tools"> 
+          <div class="tools">
+            <!--
             <a href="javascript:;" class="collapse"> </a> 
             <a href="#portlet-config" data-toggle="modal" class="config"> </a> 
             <a href="javascript:;" class="reload"> </a> 
-            <a href="javascript:;" class="remove"> </a> 
+            <a href="javascript:;" class="remove"> </a>  -->
           </div>
         </div>
 
         <div class="portlet-body">
-          <div id="gmap_marker" class="gmaps" style="z-index:999"> 
+          <div id="gmap_marker" class="gmaps" style="height:500px"> 
           </div>
         </div>
       </div>
@@ -108,20 +109,15 @@
           <div class="mx-height-300"> 
 
             <table class="table table-hover">
-              <thead>
-                <tr >
-                  <th><small> Vehicle </small></th>
-                  <th><small> Location </small></th>
-                  <th><small> Speed </small></th>
-                  <th><small> Temp</small></th>
-                </tr>
-              </thead>
               <tbody>
                  <tr ng-repeat="device in devices" ng-click="goToSingleDevicePage(device.DeviceID)" ng-mouseover="mapFocus(device.Lat, device.Lng)">
-                    <td><small>{{device.Vehicle}}<small></td>
-                    <td><small>{{device.Location}}</small></td>
-                    <td><small>{{device.Speed}}</small></td>
-                    <td><small>{{device.Temprature}}</small></td>
+                   <td>
+                      <small style="font-size:77%">
+                        <b>Vehicle:</b> {{device.Vehicle}} ({{device.Brand}})<br/>
+                        <b>AccOnOff:</b> {{device.AccOnOff}} <b>Speed:</b> {{device.Speed}} <b>RecivedTime:</b> {{device.RecivedTime}}<br/>
+                        <b>Location:</b> {{device.Location}}<br/>
+                      </small>
+                   <td>
                   </tr>
                 </tbody>
                 </table>
