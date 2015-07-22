@@ -1154,13 +1154,13 @@
 
                 // Disable state
                 var setMask = function () {
-                    $container.addClass("irs-disabled");
+                    //$container.addClass("irs-disabled"); // it removes irs-disabled class from span with id irs-1, to keep color active
                     $container.append(disableHTML);
                 };
 
                 var removeMask = function () {
                     $container.removeClass("irs-disabled");
-                    $container.find(".irs-disable-mask").remove();
+                    $container.find(".irs-disable-mask").remove();   // .irs-disable-mask disables the slider.
                 };
 
 

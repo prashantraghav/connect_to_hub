@@ -5,7 +5,7 @@ cth.controller('SingleDeviceController', ['$scope', '$http', '$interval', '$loca
   $scope.path = [];
 
   $scope.speed = function(){
-      $("#div_speedometer").speedometer({ percentage: $scope.device.Speed || 0 });
+      //$("#div_speedometer").speedometer({ percentage: $scope.device.Speed || 0 });
   };
 
   $scope.mapLivePolyline = function(){
@@ -42,6 +42,10 @@ cth.controller('SingleDeviceController', ['$scope', '$http', '$interval', '$loca
       $scope.speed();
     });
   };
+
+  $scope.goToHistoryPage = function(trip_id){
+    $location.path('singleDeviceHistory').search({'trip_id': trip_id});
+  }
 
   $scope.refresh();
 

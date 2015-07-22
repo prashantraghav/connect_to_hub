@@ -1,5 +1,3 @@
-<!-- BEGIN PAGE HEADER-->
-
 <div class="page-bar">
   <ul class="page-breadcrumb">
     <li> <i class="fa fa-home"></i> <a href="#/dashboard">Home</a> <i class="fa fa-angle-right"></i> </li>
@@ -7,20 +5,10 @@
   </ul>
 </div>
 <h3 class="page-title"> Single Devices Root </h3>
-<!-- END PAGE HEADER--> 
-<!-- BEGIN MAIN CONTENT -->
 
 <div ng-controller="SingleDeviceController"> 
 
-  <!-- BEGIN DASHBOARD STATS -->
   <div class="row">
-
-    <div class="col-sm-2">
-      <div id="div_speedometer"> 
-      </div>
-    </div>
-    
-    <div class="col-sm-1"></div>
 
     <div class="col-sm-2">
       <div class="dashboard-stat  blue-madison">
@@ -47,7 +35,7 @@
         <div class="visual"> <i class="fa fa-shopping-cart"></i> </div>
         <div class="details">
           <div class="number"> {{stats.landing_hrs}} Hrs </div>
-          <div class="desc"> Total Landing Time </div>
+          <div class="desc"> Landing Time </div>
         </div>
         <a class="more" href="#"> View more <i class="m-icon-swapright m-icon-white"></i> </a> </div>
     </div>
@@ -61,104 +49,53 @@
         </div>
         <a class="more" href="#"> View more <i class="m-icon-swapright m-icon-white"></i> </a> </div>
     </div>
-  </div>
 
 
-    <div class="row ">
-      <div class="col-md-6 col-sm-6">
-        <div class="portlet light ">
-          <div class="portlet-title">
-            <div class="caption">
-              <i class="icon-cursor font-purple-intense hide"></i>
-              <span class="caption-subject font-purple-intense bold uppercase">General Stats</span>
-            </div>
-            <div class="actions">
-              <a href="javascript:;" class="btn btn-sm btn-circle btn-default easy-pie-chart-reload">
-                <i class="fa fa-repeat"></i> Reload </a>
-            </div>
-          </div>
-          <div class="portlet-body">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="easy-pie-chart">
-                  <div class="number transactions" data-percent="55">
-                    <span>{{stats.transactions}}</span>
-                  </div>
-                  <a class="title" href="javascript:;">
-                    Transactions <i class="icon-arrow-right"></i>
-                  </a>
-                </div>
-              </div>
-              <div class="margin-bottom-10 visible-sm">
-              </div>
-              <div class="col-md-4">
-                <div class="easy-pie-chart">
-                  <div class="number visits" data-percent="85">
-                    <span>{{stats.newVisits}}</span>
-                  </div>
-                  <a class="title" href="javascript:;">
-                    New Visits <i class="icon-arrow-right"></i>
-                  </a>
-                </div>
-              </div>
-              <div class="margin-bottom-10 visible-sm">
-              </div>
-              <div class="col-md-4">
-                <div class="easy-pie-chart">
-                  <div class="number bounce" data-percent="46">
-                    <span>{{stats.bounce}}</span>
-                  </div>
-                  <a class="title" href="javascript:;">
-                    Bounce <i class="icon-arrow-right"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>			
+    <div class="col-sm-2" >
+      <input class="knob" data-angleoffset=-125 data-anglearc=250 data-fgcolor="#66EE66" value="35" data-min="0" data-max="180" readonly data-width="150" data-height="150">
     </div>
 
-    <!-- END DASHBOARD STATS -->
-
-
-    <div class="row">
-      <div class="col-md-12 margin-top-10 margin-bottom-10 clearfix">
-        <div class="col-md-3">
-          <p class="form-control-static">
-          Show Route History From:
-          </p>
-        </div>
-
-        <div class="col-md-6">
-          <div class="input-group date-picker input-daterange" data-date="10/11/2012" data-date-format="dd/mm/yyyy">
-            <input type="text" class="form-control" name="from" placeholder="Date From">
-            <span class="input-group-addon">to </span>
-            <input type="text" class="form-control" name="to" placeholder="Date to">
-          </div>
-        </div>
-
-        <div class="col-md-2">
-          <button class="btn btn-large yellow table-group-action-submit"><i class="fa fa-check"></i> Go</button>
-        </div>
+    <div class="col-md-2">
+      <div class="margin-top-20">
+        <input id="range_6" type="text" name="range_6" value="" data-min="0" data-max="100" data-from="50" data-disable="true"/>
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-md-9 clearfix"> 
-        <!-- BEGIN MARKERS PORTLET-->
-        <div class="portlet solid green">
-          <div class="portlet-title">
-            <div class="caption"> <i class="fa fa-gift"></i>Live Device Location </div>
-            <div class="tools"> 
-              <a href="javascript:;" class="collapse"> </a> 
-              <a href="#portlet-config" data-toggle="modal" class="config"> </a> 
-              <a href="javascript:;" class="reload"> </a> 
-              <a href="javascript:;" class="remove"> </a> 
-            </div>
-          </div>
-          <div class="portlet-body">
-            <div id="gmap_marker" class="gmaps"></div>
+
+  </div>
+
+
+  <div class="row">
+    <div class="col-sm-12 margin-top-10 margin-bottom-10 clearfix">
+      <div class="col-sm-3">
+        <p class="form-control-static">
+        Show Route History From:
+        </p>
+      </div>
+
+      <div class="col-sm-5">
+        <div class="input-group date-picker input-daterange" data-date="10/11/2012" data-date-format="dd/mm/yyyy">
+          <input type="text" class="form-control" name="from" placeholder="Date From">
+          <span class="input-group-addon">to </span>
+          <input type="text" class="form-control" name="to" placeholder="Date to">
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <button class="btn btn-large yellow table-group-action-submit"><i class="fa fa-check"></i> Go</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-9 clearfix"> 
+      <!-- BEGIN MARKERS PORTLET-->
+      <div class="portlet solid green">
+        <div class="portlet-title">
+          <div class="caption"> <i class="fa fa-gift"></i>Live Device Location </div>
+        </div>
+        <div class="portlet-body">
+          <div id="gmap_marker" class="gmaps"></div>
         </div>
       </div>
       <!-- END MARKERS PORTLET--> 
@@ -169,15 +106,36 @@
           <div class="caption"> <i class="fa fa-gift"></i> Trip Details </div>
         </div>
         <div class="portlet-body"> 
-          <div class="mx-height-300">
-            <a ng-repeat="trip in trips" href="#singleDeviceHistory?trip_id={{trip.trip_id}}" class="btn green btn-block margin-left-0">{{trip.source }} to {{trip.destination}}  </a> 
+          <div class="mx-height-500">
+            <div class="scroller" style="height: 500px;" data-always-visible="1" data-rail-visible="0">
+              <ul class="feeds tripHistory">
+                <li ng-repeat="trip in trips" ng-click="goToHistoryPage(trip.trip_id)">
+                <div class="col1">
+                  <div class="cont">
+                    <div class="cont-col1">
+                      <div class="date"><sub>2:00 am<br/>Today</sub></div>
+                      <br/>
+                      <div class="date"><sub>11:00 am<br/>Yesterday</sub></div>
+                    </div>
+                    <div class="cont-col2 col-sm-offset-1" >
+                      <div class="desc">
+                        <div class="destination">{{trip.destination}}</div>
+                        <div class="stats"> <small> 300km &nbsp; 35km/l  &nbsp; 3:00h</small></div>
+                        <div class="source">{{trip.source}}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </li>
+              </ul>
+            </div>
           </div> 
         </div>
       </div>
     </div>
   </div>
 
-  <div class="portlet box blue-madison">
+  <div class="portlet box blue-madison hide">
     <div class="portlet-title">
       <div class="caption"> <i class="fa fa-globe"></i>All Device Details </div>
       <div class="tools"> <a href="javascript:;" class="reload"> </a> <a href="javascript:;" class="remove"> </a> </div>
@@ -197,24 +155,26 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>{{device.RecivedTime}}</td>
-            <td>{{device.AccOnOff}}</td>
-            <td>{{device.Location}} </td>
-            <td>{{device.Speed}} </td>
-            <td>{{device.Rpm}} </td>
-            <td>{{device.Lat}}</td>
-            <td>{{device.Lng}}</td>
-            <td>{{device.Temprature}}</td>
-        </tbody>
-      </table>
+        <tr>
+          <td>{{device.RecivedTime}}</td>
+          <td>{{device.AccOnOff}}</td>
+          <td>{{device.Location}} </td>
+          <td>{{device.Speed}} </td>
+          <td>{{device.Rpm}} </td>
+          <td>{{device.Lat}}</td>
+          <td>{{device.Lng}}</td>
+          <td>{{device.Temprature}}</td>
+          </tbody>
+        </table>
+      </div>
     </div>
+
   </div>
+  <!-- END MAIN CONTENT --> 
 
-</div>
-<!-- END MAIN CONTENT --> 
-
-<script>
-  ComponentsPickers.init();
-  TableAdvanced.init();
-</script>
+  <script>
+    ComponentsPickers.init();
+    TableAdvanced.init();
+    ComponentsKnobDials.init();
+    ComponentsIonSliders.init();
+  </script>

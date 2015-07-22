@@ -69,7 +69,7 @@ Options:
 				border: '0px',
 				fontFamily: 'Arial',
 				fontWeight: '900',
-				backgroundImage : "url('./assets/speedometer/background.jpg')"
+				backgroundImage : "url('./assets/speedometer/background.png')"
 
 		
 			},
