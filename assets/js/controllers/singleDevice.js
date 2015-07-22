@@ -1,11 +1,12 @@
-cth.controller('SingleDeviceController', ['$scope', '$http', '$interval', '$location', function($scope, $http, $interval, $location ){
+cth.controller('SingleDeviceController', ['$scope', '$http', '$interval', '$location', 'dateTimeFormat', function($scope, $http, $interval, $location, $dateTimeFormat ){
 
   $scope.device_id = $location.search()['device']
   $scope.map = new GMaps({div: '#gmap_marker', lat: AGILE_MAP.initLat, lng: AGILE_MAP.initLng, zoom: AGILE_MAP.initZoom});
   $scope.path = [];
 
   $scope.speed = function(){
-      //$("#div_speedometer").speedometer({ percentage: $scope.device.Speed || 0 });
+    $(".knob").val($scope.device.Speed).trigger('change');
+    //$("#div_speedometer").speedometer({ percentage: $scope.device.Speed || 0 });
   };
 
   $scope.mapLivePolyline = function(){
@@ -40,11 +41,24 @@ cth.controller('SingleDeviceController', ['$scope', '$http', '$interval', '$loca
       $scope.trips = data.trips;
       $scope.drawMap();
       $scope.speed();
+      $scope.temp();
     });
   };
 
   $scope.goToHistoryPage = function(trip_id){
     $location.path('singleDeviceHistory').search({'trip_id': trip_id});
+  }
+
+  $scope.dateFormat = function(dateTime){
+    return $dateTimeFormat.date(dateTime);
+  }
+
+  $scope.timeFormat = function(dateTime){
+    return $dateTimeFormat.time(dateTime);
+  }
+
+  $scope.temp = function(){
+    $("#range_6").ionRangeSlider("update",{from: $scope.device.Temprature})
   }
 
   $scope.refresh();

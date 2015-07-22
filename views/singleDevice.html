@@ -52,12 +52,13 @@
 
 
     <div class="col-sm-2" >
-      <input class="knob" data-angleoffset=-125 data-anglearc=250 data-fgcolor="#66EE66" value="35" data-min="0" data-max="180" readonly data-width="150" data-height="150">
+      <input class="knob"
+        data-angleoffset=-125 data-anglearc=250 data-fgcolor="#66EE66" value="{{device.Speed}}" data-min="0" data-max="180" readonly data-width="150" data-height="150">
     </div>
 
     <div class="col-md-2">
       <div class="margin-top-20">
-        <input id="range_6" type="text" name="range_6" value="" data-min="0" data-max="100" data-from="50" data-disable="true"/>
+        <input id="range_6" type="text" name="range_6" value=""  data-slider-orientation="vertical" data-min="0" data-max="100" data-from="{{device.Temprature}}" data-disable="true"/>
       </div>
     </div>
 
@@ -66,26 +67,20 @@
 
 
   <div class="row">
-    <div class="col-sm-12 margin-top-10 margin-bottom-10 clearfix">
-      <div class="col-sm-3">
-        <p class="form-control-static">
-        Show Route History From:
-        </p>
-      </div>
-
-      <div class="col-sm-5">
+    <h4 style="margin-left:1.3%;">History</h4>
+    <form action="#" class="form-inline" style="margin-left:1.3%">
+      <div class="form-group">
         <div class="input-group date-picker input-daterange" data-date="10/11/2012" data-date-format="dd/mm/yyyy">
           <input type="text" class="form-control" name="from" placeholder="Date From">
           <span class="input-group-addon">to </span>
           <input type="text" class="form-control" name="to" placeholder="Date to">
         </div>
       </div>
-
-      <div class="col-md-3">
-        <button class="btn btn-large yellow table-group-action-submit"><i class="fa fa-check"></i> Go</button>
-      </div>
-    </div>
+      <button class="btn btn-large yellow table-group-action-submit"><i class="fa fa-check"></i> Go</button>
+    </form>
   </div>
+
+ <br/>
 
   <div class="row">
     <div class="col-md-9 clearfix"> 
@@ -113,14 +108,14 @@
                 <div class="col1">
                   <div class="cont">
                     <div class="cont-col1">
-                      <div class="date"><sub>2:00 am<br/>Today</sub></div>
+                      <div class="date"><sub>{{timeFormat(trip.endTime)}}<br/>{{dateFormat(trip.endTime)}}</sub></div>
                       <br/>
-                      <div class="date"><sub>11:00 am<br/>Yesterday</sub></div>
+                      <div class="date"><sub>{{timeFormat(trip.startTime)}}<br/>{{dateFormat(trip.startTime)}}</sub></div>
                     </div>
                     <div class="cont-col2 col-sm-offset-1" >
                       <div class="desc">
                         <div class="destination">{{trip.destination}}</div>
-                        <div class="stats"> <small> 300km &nbsp; 35km/l  &nbsp; 3:00h</small></div>
+                        <div class="stats"> <small> {{trip.km}}km &nbsp; {{trip.fuelAvg}}km/l  &nbsp; {{trip.duration}}</small></div>
                         <div class="source">{{trip.source}}</div>
                       </div>
                     </div>
@@ -175,6 +170,6 @@
   <script>
     ComponentsPickers.init();
     TableAdvanced.init();
-    ComponentsKnobDials.init();
+     ComponentsKnobDials.init(); 
     ComponentsIonSliders.init();
   </script>
