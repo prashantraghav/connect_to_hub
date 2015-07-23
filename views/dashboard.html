@@ -114,7 +114,7 @@
                    <td>
                       <small style="font-size:77%">
                         <b>Vehicle:</b> {{device.Vehicle}} ({{device.Brand}})<br/>
-                        <b>AccOnOff:</b> {{device.AccOnOff}} <b>Speed:</b> {{device.Speed}} <b>RecivedTime:</b> {{device.RecivedTime}}<br/>
+                        <b>AccOnOff:</b> {{device.AccOnOff}} <b>Speed:</b> {{device.Speed}} <b>RecivedTime:</b> {{timeFormat(device.RecivedTime)}} {{dateFormat(device.RecivedTime)}}<br/>
                         <b>Location:</b> {{device.Location}}<br/>
                       </small>
                    <td>
