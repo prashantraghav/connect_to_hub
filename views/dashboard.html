@@ -106,21 +106,22 @@
           <div class="caption"> <i class="fa fa-gift"></i> Fleet Information </div> 
         </div> 
         <div class="portlet-body" >  
-          <div class="mx-height-300"> 
-
-            <table class="table table-hover">
-              <tbody>
-                 <tr ng-repeat="device in devices" ng-click="goToSingleDevicePage(device.DeviceID)" ng-mouseover="mapFocus(device.Lat, device.Lng)">
-                   <td>
-                      <small style="font-size:77%">
-                        <b>Vehicle:</b> {{device.Vehicle}} ({{device.Brand}})<br/>
-                        <b>AccOnOff:</b> {{device.AccOnOff}} <b>Speed:</b> {{device.Speed}} <b>RecivedTime:</b> {{timeFormat(device.RecivedTime)}} {{dateFormat(device.RecivedTime)}}<br/>
-                        <b>Location:</b> {{device.Location}}<br/>
-                      </small>
-                   <td>
-                  </tr>
-                </tbody>
-                </table>
+          <div class="mx-height-500"> 
+            <div class="scroller" style="height: 500px;" data-always-visible="1" data-rail-visible="0">
+              <table class="table table-hover">
+                <tbody>
+                <tr ng-repeat="device in devices" ng-click="goToSingleDevicePage(device.DeviceID)" ng-mouseover="mapFocus(device.Lat, device.Lng)">
+                  <td>
+                    <small style="font-size:77%">
+                      <b>Vehicle:</b> {{device.Vehicle}} ({{device.Brand}})<br/>
+                      <b>AccOnOff:</b> {{device.AccOnOff}} <b>Speed:</b> {{device.Speed}} <b>RecivedTime:</b> {{timeFormat(device.RecivedTime)}} {{dateFormat(device.RecivedTime)}}<br/>
+                      <b>Location:</b> {{device.Location}}<br/>
+                    </small>
+                    <td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>  
             </div> 
           </div> 

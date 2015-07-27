@@ -18,11 +18,11 @@
 }
 
 
-.tripHistory > li:hover > div.col1 > div.cont > div.cont-col1{
+.tripHistory > li.selected >  div.col1 > div.cont > div.cont-col1, .tripHistory > li:hover > div.col1 > div.cont > div.cont-col1{
   font-weight:bold;
 }
 
-.tripHistory > li:hover > div.col1 > div.cont > div.cont-col2 > div.desc{
+.tripHistory > li:hover > div.col1 > div.cont > div.cont-col2 > div.desc, .tripHistory > li.selected > div.col1 > div.cont > div.cont-col2 > div.desc{
   background-image: url('../../../global/img/TripHistory/trip_up_arrow_blue.png'); 
   color: #578EBE;
   font-weight:bold;

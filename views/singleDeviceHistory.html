@@ -1,22 +1,15 @@
-<!-- BEGIN PAGE HEADER-->
-
 <div class="page-bar">
   <ul class="page-breadcrumb">
     <li> <i class="fa fa-home"></i> <a href="#/dashboard.html">Home</a> <i class="fa fa-angle-right"></i> </li>
     <li> <a href="#/singleDeviceHistory.html">Single Devices History</a> </li>
   </ul>
 </div>
-<h3 class="page-title"> Single Devices History </h3>
-<!-- END PAGE HEADER--> 
-<!-- BEGIN MAIN CONTENT -->
-<div ng-controller="SingleDeviceHistoryController"> 
 
-  <!-- BEGIN DASHBOARD STATS -->
-  <!-- END DASHBOARD STATS -->
+<h3 class="page-title"> Single Devices History </h3>
+<div ng-controller="SingleDeviceHistoryController"> 
 
   <div class="row">
     <div class="col-md-12">
-      <!-- BEGIN CHART PORTLET-->
       <div class="portlet light bordered">
         <div class="portlet-title">
           <div class="caption">
@@ -35,104 +28,80 @@
           </div>
         </div>
       </div>
-      <!-- END CHART PORTLET-->
     </div>
   </div>
-  <!-- END ROW -->
+
+
 
   <div class="row">
-    <div class="col-md-12 margin-top-10 margin-bottom-10 clearfix">
-      <div class="col-md-3">
-        <p class="form-control-static">
-        Show Route History From:
-        </p>
-      </div>
-
-      <div class="col-md-6">
+    <h4 style="margin-left:1.3%;">History</h4>
+    <form action="#" class="form-inline" style="margin-left:1.3%">
+      <div class="form-group">
         <div class="input-group date-picker input-daterange" data-date="10/11/2012" data-date-format="dd/mm/yyyy">
           <input type="text" class="form-control" name="from" placeholder="Date From">
           <span class="input-group-addon">to </span>
           <input type="text" class="form-control" name="to" placeholder="Date to">
         </div>
       </div>
-
-      <div class="col-md-2">
-        <button class="btn btn-large yellow table-group-action-submit"><i class="fa fa-check"></i> Go</button>
-      </div>
-    </div>
+      <button class="btn btn-large yellow table-group-action-submit"><i class="fa fa-check"></i> Go</button>
+    </form>
   </div>
+
+  <br/>
 
   <div class="row">
     <div class="col-md-9 clearfix"> 
-      <!-- BEGIN MARKERS PORTLET-->
       <div class="portlet solid green">
         <div class="portlet-title">
           <div class="caption"> <i class="fa fa-gift"></i>Single Device Location </div>
           <div class="tools"> 
-            <a href="javascript:;" class="collapse"> </a> 
-            <a href="#portlet-config" data-toggle="modal" class="config"> </a> 
-            <a href="javascript:;" class="reload"> </a> 
-            <a href="javascript:;" class="remove"> </a> </div>
+            <a href="javascript:;" class="reload" ng-click="playRoute()"></a> 
+         </div>
         </div>
         <div class="portlet-body">
           <div id="gmap_marker" class="gmaps">
           </div>
         </div>
       </div>
-      <!-- END MARKERS PORTLET--> 
     </div>
+
     <div class="col-md-3 clearfix">
       <div class="portlet box blue-hoki">
         <div class="portlet-title">
           <div class="caption"> <i class="fa fa-gift"></i> Trip Details </div>
         </div>
-        <div class="portlet-body">
-          <div class="mx-height-300">
-            <a href="#" class="btn green btn-block margin-left-0">{{trip.source }} to {{trip.destination}}  </a> 
-          </div>
+        <div class="portlet-body"> 
+          <div class="mx-height-500">
+            <div class="scroller" style="height: 500px;" data-always-visible="1" data-rail-visible="0">
+              <ul class="feeds tripHistory">
+                <li ng-repeat="tr in tripHistory" ng-click="goToHistoryPage(tr.trip_id)" class="{{(tr.trip_id == trip.trip_id)?'selected':''}}">
+                <div class="col1">
+                  <div class="cont">
+                    <div class="cont-col1">
+                      <div class="date"><sub>{{timeFormat(tr.endTime)}}<br/>{{dateFormat(tr.endTime)}}</sub></div>
+                      <br/>
+                      <div class="date"><sub>{{timeFormat(tr.startTime)}}<br/>{{dateFormat(tr.startTime)}}</sub></div>
+                    </div>
+                    <div class="cont-col2 col-sm-offset-1" >
+                      <div class="desc">
+                        <div class="destination">{{tr.destination}}</div>
+                        <div class="stats"> <small> {{tr.km}}km &nbsp; {{tr.fuelAvg}}km/l  &nbsp; {{tr.duration}}</small></div>
+                        <div class="source">{{tr.source}}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </li>
+              </ul>
+            </div>
+          </div> 
         </div>
       </div>
     </div>
-  </div>
-  <div class="portlet box blue-madison">
-    <div class="portlet-title">
-      <div class="caption"> <i class="fa fa-globe"></i>All Device Details </div>
-      <div class="tools"> <a href="javascript:;" class="reload"> </a> <a href="javascript:;" class="remove"> </a> </div>
-    </div>
-    <div class="portlet-body">
-      <table class="table table-striped table-bordered table-hover" id="sample_1">
-        <thead>
-          <tr>
-            <th> Acc On/Off </th>
-            <th> Start Location </th>
-            <th> End Location </th>
-            <th> Start Time </th>
-            <th> End Time </th>
-            <th> Trip Duration </th>
-            <th> Kilometers Done </th>
-            <th> Fuel Consuption </th>
-            <th> No of Alarms </th>
-          </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <td> {{trip.accOnOff}} </th>
-          <td> {{trip.source}} </th>
-          <td> {{trip.destination}} </th>
-          <td> {{trip.startTime}} </th>
-          <td> {{trip.endTime}} </th>
-          <td> {{trip.duration}} </th>
-          <td> {{trip.kms}} </th>
-          <td> {{trip.fuelConsumed}} </th>
-          <td> {{trip.alarms}} </th>
-        </tr>
-        </tbody>
-      </table>
-    </div>
+
   </div>
 </div>
-<!-- END MAIN CONTENT --> 
+
 <script>
-ComponentsPickers.init();
-TableAdvanced.init();
+  ComponentsPickers.init();
 </script> 
