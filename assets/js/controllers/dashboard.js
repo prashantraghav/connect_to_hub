@@ -14,7 +14,7 @@ cth.controller('DashboardController', ['$scope', '$http', '$interval', '$locatio
           lat: dev.Lat, 
           lng: dev.Lng, 
           title: dev.Vehicle, 
-          icon: AGILE_MAP.marker.icon, 
+          icon: AGILE_MAP.marker.icon.default, 
           infoWindow: {
             content: $scope.infoWindowContent(dev),
           },

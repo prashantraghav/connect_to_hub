@@ -27,7 +27,7 @@ cth.controller('SingleDeviceController', ['$scope', '$http', '$interval', '$loca
     $scope.map.removeMarkers();
     $scope.path.push([$scope.device.Lat, $scope.device.Lng]);
     $scope.mapLivePolyline();
-    $scope.map.addMarker({lat: $scope.device.Lat, lng: $scope.device.Lng, title: $scope.device.Vehicle, icon: AGILE_MAP.marker.icon});
+    $scope.map.addMarker({lat: $scope.device.Lat, lng: $scope.device.Lng, title: $scope.device.Vehicle, icon: AGILE_MAP.marker.icon.default});
     $scope.mapFocus();
     $scope.map.setZoom(8);
   }

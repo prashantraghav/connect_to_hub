@@ -1,5 +1,11 @@
 var AGILE_MAP = { initLat: 28.4962, initLng: 77.536, initZoom: 7,
-                  marker:{ icon: "http://google-maps-icons.googlecode.com/files/car.png"},
+                  marker:{ 
+                    icon: {
+                      default: "./assets/global/img/map_car_icons/white_on_black.png",
+                      destination: "./assets/global/img/map_car_icons/black_on_white.png",
+                      alert: "./assets/global/img/map_car_icons/alert.png"
+                    },
+                  },
                   polyline: {
                     strokeColor: '#0B0B61',
                     strokeOpacity: 0.6,

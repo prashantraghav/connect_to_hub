@@ -5,6 +5,7 @@ cth.controller('SingleDeviceHistoryController', ['$scope', '$http', '$interval',
   $scope.path = [];
 
   $scope.mapLivePolyline = function(){
+    $scope.map.removePolylines();
     $scope.map.drawPolyline({
       path: $scope.path,
       strokeColor: AGILE_MAP.polyline.strokeColor,
@@ -27,18 +28,34 @@ cth.controller('SingleDeviceHistoryController', ['$scope', '$http', '$interval',
 
 
   $scope.showMarkers = function(){
+    $scope.map.removeMarkers();
     var _location = $scope.tripLocation();
-    $scope.map.addMarker({lat: _location.destination.lat, lng: _location.destination.lng, icon: AGILE_MAP.marker.icon});
-    $scope.map.addMarker({lat: _location.source.lat, lng: _location.source.lng, icon: AGILE_MAP.marker.icon});
+    $scope.map.addMarker({lat: _location.destination.lat, lng: _location.destination.lng, icon: AGILE_MAP.marker.icon.default});
+    $scope.map.addMarker({lat: _location.source.lat, lng: _location.source.lng, icon: AGILE_MAP.marker.icon.default});
+  }
+
+  $scope.add_alert_marker = function(_lat, _lng, alert){
+    $scope.map.addMarker({lat: _lat, lng: _lng, icon:  AGILE_MAP.marker.icon.alert, infoWindow: {
+      content: '<div style="color:black">'
+                +'<b> Description: </b>'+alert.AlarmDescription+'<br/>'
+                +'<b> Value: </b>'+alert.AlarmValue+' '+ alert.AlarmUnit+'<br/>'
+                +'<b> Location: </b>'+_lat+', '+_lng+'<br/>'
+               +'</div>'
+    }});
   }
 
   $scope.drawMap = function(play){
     arguments.callee.i = (play) ? 0 : ++arguments.callee.i;
     lat = $scope.routes[arguments.callee.i].lat;
     lng = $scope.routes[arguments.callee.i].lng;
+    
+    if($scope.routes[arguments.callee.i].alert)
+      $scope.add_alert_marker(lat, lng, $scope.routes[arguments.callee.i].alert)
+
     $scope.path.push([lat, lng]);
     $scope.mapLivePolyline();
     $scope.mapFocus(lat, lng);
+
     if(arguments.callee.i < $scope.routes.length-1){
       $timeout(function(){
         $scope.drawMap()
@@ -48,6 +65,7 @@ cth.controller('SingleDeviceHistoryController', ['$scope', '$http', '$interval',
 
   $scope.playRoute = function(){
     $scope.path = [];
+    $scope.showMarkers();
     $scope.map.removePolylines();
     $scope.drawMap(true);
   }
@@ -67,7 +85,6 @@ cth.controller('SingleDeviceHistoryController', ['$scope', '$http', '$interval',
       $scope.chart = data.chart;
 
       $scope.playRoute();
-      $scope.showMarkers();
       $scope.makeChart();
     });
   };
