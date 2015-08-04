@@ -4,7 +4,7 @@
     <li> <a href="#/singleDevice">Single Devices Root</a> </li>
   </ul>
 </div>
-<h3 class="page-title"> Single Devices Root </h3>
+<h3 class="page-title"> Vehicle Live Data </h3>
 
 <div ng-controller="SingleDeviceController"> 
 
@@ -58,7 +58,7 @@
 
     <div class="col-md-2">
       <div class="margin-top-20">
-        <input id="range_6" type="text" name="range_6" value=""  data-slider-orientation="vertical" data-min="0" data-max="100" data-from="{{device.Temprature}}" data-disable="true"/>
+        <input id="range_6" type="text" name="range_6" value=""  data-slider-orientation="vertical" data-min="0" data-max="200" data-from="{{device.Temprature}}" data-disable="true"/>
       </div>
     </div>
 
@@ -66,7 +66,7 @@
   </div>
 
 
-  <div class="row">
+  <div class="row hide">
     <h4 style="margin-left:1.3%;">History</h4>
     <form action="#" class="form-inline" style="margin-left:1.3%">
       <div class="form-group">
@@ -87,7 +87,11 @@
       <!-- BEGIN MARKERS PORTLET-->
       <div class="portlet solid green">
         <div class="portlet-title">
-          <div class="caption"> <i class="fa fa-gift"></i>Live Device Location </div>
+          <div class="caption"> <i class="fa fa-gift"></i>{{map_routes}}</div>
+          <div class="tools">
+            <a href="" ng-click="playTripRoute();" class="{{(liveMap) ? 'hide' : '' }}"><i class="fa fa-play" style="color:#FFFFFF"> Play Route</i></a>
+            <a href="" ng-click="setLiveMap(true); drawLiveMap();"><i class="fa fa-wifi" style="color:#FFFFFF"> Live</i></a>
+          </div>
         </div>
         <div class="portlet-body">
           <div id="gmap_marker" class="gmaps"></div>
@@ -105,19 +109,19 @@
           <div class="mx-height-500">
             <div class="scroller" style="height: 500px;" data-always-visible="1" data-rail-visible="0">
               <ul class="feeds tripHistory">
-                <li ng-repeat="trip in trips" ng-click="goToHistoryPage(trip.trip_id)">
+                <li ng-repeat="tr in trips" ng-click="drawTripRoute(tr.tr_id)">
                 <div class="col1">
                   <div class="cont">
                     <div class="cont-col1">
-                      <div class="date"><sub>{{timeFormat(trip.endTime)}}<br/>{{dateFormat(trip.endTime)}}</sub></div>
+                      <div class="date"><sub>{{timeFormat(tr.endTime)}}<br/>{{dateFormat(tr.endTime)}}</sub></div>
                       <br/>
-                      <div class="date"><sub>{{timeFormat(trip.startTime)}}<br/>{{dateFormat(trip.startTime)}}</sub></div>
+                      <div class="date"><sub>{{timeFormat(tr.startTime)}}<br/>{{dateFormat(tr.startTime)}}</sub></div>
                     </div>
                     <div class="cont-col2 col-sm-offset-1" >
                       <div class="desc">
-                        <div class="destination">{{trip.destination}}</div>
-                        <div class="stats"> <small> {{trip.km}}km &nbsp; {{trip.fuelAvg}}km/l  &nbsp; {{trip.duration}}</small></div>
-                        <div class="source">{{trip.source}}</div>
+                        <div class="destination">{{tr.destination}}</div>
+                        <div class="stats"> <small> {{tr.km}}km &nbsp; {{tr.fuelAvg}}km/l  &nbsp; {{tr.duration}}</small></div>
+                        <div class="source">{{tr.source}}</div>
                       </div>
                     </div>
                   </div>

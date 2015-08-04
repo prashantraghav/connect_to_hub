@@ -1,0 +1,18 @@
+{"stats":{"trip_id":1,
+  "vehicle":"UP 13 N 4989",
+  "recivedTime":"2015-06-11 04:07:00",
+  "accOnOff":"On",
+  "source":"Greater Noida",
+  "destination":"Gurgaon",
+  "startTime":"2015-06-11 04:07:00",
+  "endTime":"2015-06-11 07:07:00",
+  "duration":"3:00:00","kms":"70",
+  "fuelConsumed":"3","alarms":"5"},
+"routes":[
+  {"lat":28.4962,"lng":77.536},
+  {"lat":28.57,"lng":77.32},
+  {"lat":28.6139,"lng":77.209, "alert": {"AlarmDescription": "overspeed", "AlarmValue": "100", "AlarmUnit":"km/h"}},
+  {"lat":28.47,"lng":77.03}
+]
+}
+
