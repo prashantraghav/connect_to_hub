@@ -82,6 +82,7 @@ cth.controller('SingleDeviceController', ['$scope', '$http', '$interval', '$loca
   }
 
   $scope.playRoute = function(play){
+    $scope.hideLive = true;
     arguments.callee.i = (play) ? 0 : ++arguments.callee.i;
     lat = $scope.routes[arguments.callee.i].lat;
     lng = $scope.routes[arguments.callee.i].lng;
@@ -97,6 +98,8 @@ cth.controller('SingleDeviceController', ['$scope', '$http', '$interval', '$loca
       $timeout(function(){
         $scope.playRoute()
       }, 2000);
+    }else{
+      $scope.hideLive = false;
     }
   }
 

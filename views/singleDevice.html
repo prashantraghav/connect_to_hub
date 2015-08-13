@@ -90,7 +90,7 @@
           <div class="caption"> <i class="fa fa-gift"></i>{{map_routes}}</div>
           <div class="tools">
             <a href="" ng-click="playTripRoute();" class="{{(liveMap) ? 'hide' : '' }}"><i class="fa fa-play" style="color:#FFFFFF"> Play Route</i></a>
-            <a href="" ng-click="setLiveMap(true); drawLiveMap();"><i class="fa fa-wifi" style="color:#FFFFFF"> Live</i></a>
+            <a href="" ng-click="setLiveMap(true); drawLiveMap();" class="{{(hideLive) ? 'hide': ''}}"><i class="fa fa-wifi" style="color:#FFFFFF"> Live</i></a>
           </div>
         </div>
         <div class="portlet-body">

@@ -3,6 +3,10 @@ cth.controller('SingleDeviceHistoryController', ['$scope', '$http', '$interval',
 
   $scope.map = new GMaps({div: '#gmap_marker', lat: AGILE_MAP.initLat, lng: AGILE_MAP.initLng, zoom: 10});
   $scope.path = [];
+  $scope.filterOptions = [{option: "Week", value:"w"}, {option:"Month", value:"M"}, {option:"Year", value:'Y'}, {option:"Custom", value:'C'}]
+  $scope.filterDevices = [{name: "All Devices", value:'0'}];
+  $scope.filter = {option: $scope.filterOptions[0].value, device: $scope.filterDevices[0].value, fromDate: null, toDate: null}
+  $scope.API_URL = SINGLE_DEVICE_HISTORY_DATA_URL+'?option='+$scope.filter.option+'&device='+$scope.filter.device;
 
   $scope.mapLivePolyline = function(){
     $scope.map.removePolylines();
@@ -44,7 +48,7 @@ cth.controller('SingleDeviceHistoryController', ['$scope', '$http', '$interval',
     }});
   }
 
-  $scope.drawMap = function(play){
+  $scope.playMap = function(play){
     arguments.callee.i = (play) ? 0 : ++arguments.callee.i;
     lat = $scope.routes[arguments.callee.i].lat;
     lng = $scope.routes[arguments.callee.i].lng;
@@ -58,7 +62,7 @@ cth.controller('SingleDeviceHistoryController', ['$scope', '$http', '$interval',
 
     if(arguments.callee.i < $scope.routes.length-1){
       $timeout(function(){
-        $scope.drawMap()
+        $scope.playMap()
       }, 2000);
     }
   }
@@ -66,25 +70,53 @@ cth.controller('SingleDeviceHistoryController', ['$scope', '$http', '$interval',
   $scope.playRoute = function(){
     $scope.path = [];
     $scope.showMarkers();
-    $scope.map.removePolylines();
-    $scope.drawMap(true);
+    $scope.playMap(true);
+  }
+
+  $scope.drawRoute = function(){
+    $scope.path = [];
+    $scope.showMarkers();
+    angular.forEach($scope.routes, function(route, index){
+      $scope.path.push([route.lat, route.lng])
+      if(route.alert)
+        $scope.add_alert_marker(route.lat, route.lng, route.alert)
+    });
+
+    $scope.mapLivePolyline();
+    var _location = $scope.tripLocation()
+      $scope.mapFocus(_location.destination.lat, _location.destination.lng);
+  }
+
+  $scope.drawTripRoute = function(trip_id){
+    url = TRIP_DETAILS_DATA_URL+'?trip_id='+trip_id;
+    $http.get(url).success(function(data) {
+      $scope.trip = data.stats;
+      $scope.routes = data.routes;
+      $scope.drawRoute();
+    });
   }
 
   $scope.makeChart = function(){
     ChartsAmcharts.init($scope.chart);
   }
 
-  $scope.refresh = function() {
-    trip_id = $location.search()['trip_id']
-    url = SINGLE_DEVICE_HISTORY_DATA_URL+'?trip='+trip_id;
+  $scope.getAlldevices = function(devices){
+    angular.forEach(devices, function(device, index){
+      $scope.filterDevices.push({name: device.brand, value: device.DeviceID})
+    });
+  }
+
+  $scope.refresh = function(first_call) {
+    url = $scope.API_URL
     $http.get(url).success(function(data) {
 
       $scope.trip = data.trip;
       $scope.tripHistory = data.tripHistory;
       $scope.routes = data.routes;
       $scope.chart = data.chart;
+      if(first_call) $scope.getAlldevices(data.devices);
 
-      $scope.playRoute();
+      $scope.drawRoute();
       $scope.makeChart();
     });
   };
@@ -102,6 +134,18 @@ cth.controller('SingleDeviceHistoryController', ['$scope', '$http', '$interval',
     return $dateTimeFormat.time(dateTime);
   }
 
-  $scope.refresh();
+  $scope.apply_filter = function(){
+    if($scope.filter.option !='C'){
+      $scope.API_URL = SINGLE_DEVICE_HISTORY_DATA_URL+'?option='+$scope.filter.option+'&device='+$scope.filter.device;
+      $scope.refresh();
+    }
+  }
+
+  $scope.apply_filter_custom = function(){
+     $scope.API_URL = SINGLE_DEVICE_HISTORY_DATA_URL+'?fromDate='+$scope.filter.fromDate+'&toDate='+$scope.filter.toDate+'&device='+$scope.filter.device;
+     $scope.refresh();
+  }
+
+  $scope.refresh(true);
 
 }]);

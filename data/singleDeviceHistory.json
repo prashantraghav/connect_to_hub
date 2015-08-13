@@ -34,5 +34,13 @@
            {"trip_id":1, "source":"Greater Noida", "destination":"Gurgaon", "startTime": "2015-06-11 04:07:00", "endTime": "2015-06-11 07:07:00", "duration": "3:00:00", "fuelAvg":"50", "km":70},
            {"trip_id":2, "source":"Delhi", "destination":"Noida", "startTime": "2015-06-11 04:07:00", "endTime": "2015-06-11 07:07:00", "duration": "3:00:00", "fuelAvg":"50", "km":70},
            {"trip_id":3, "source":"Mumbai", "destination":"Delhi", "startTime": "2015-06-11 04:07:00", "endTime": "2015-06-11 07:07:00", "duration": "3:00:00", "fuelAvg":"50", "km":70}
-          ]
+          ],
+
+
+     "devices":[
+        {"DeviceID":"123456", "brand": "Hyundai i10"},
+        {"DeviceID":"123457", "brand": "Hyundai i20"}
+       ]
+
+
 }

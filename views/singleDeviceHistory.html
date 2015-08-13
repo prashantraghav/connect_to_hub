@@ -5,8 +5,33 @@
   </ul>
 </div>
 
-<h3 class="page-title"> Single Devices History </h3>
+<h3 class="page-title"> Routes History </h3>
+
 <div ng-controller="SingleDeviceHistoryController"> 
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="portlet light">
+        <div class="portlet-title">
+          <form action="#" class="form-inline" style="margin-left:1.3%">
+            <select class="form-control" ng-change="apply_filter()" ng-model="filter.option" ng-options="f.value as (f.option | uppercase) for f in filterOptions">
+            </select>
+            <div class="form-group {{(filter.option != 'C') ? 'hide' : '' }}">
+              <div class="input-group date-picker input-daterange" data-date="10-11-2012" data-date-format="dd-mm-yyyy">
+                <input type="text" class="form-control" name="from" placeholder="Date From" ng-model="filter.fromDate">
+                <span class="input-group-addon">to </span>
+                <input type="text" class="form-control" name="to" placeholder="Date to" ng-model="filter.toDate">
+              </div>
+            </div>
+            <a href="" class="btn btn-large yellow table-group-action-submit {{(filter.option != 'C') ? 'hide' : '' }}" ng-click="apply_filter_custom()"><i class="fa fa-check"></i> Go</a>
+            <select class="form-control" ng-change="apply_filter()" ng-model="filter.device" ng-options="f.value as (f.name | uppercase) for f in filterDevices">
+            </select>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <div class="row">
     <div class="col-md-12">
@@ -33,7 +58,7 @@
 
 
 
-  <div class="row">
+  <div class="row hide">
     <h4 style="margin-left:1.3%;">History</h4>
     <form action="#" class="form-inline" style="margin-left:1.3%">
       <div class="form-group">
@@ -56,7 +81,7 @@
           <div class="caption"> <i class="fa fa-gift"></i>Single Device Location </div>
           <div class="tools"> 
             <a href="javascript:;" class="reload" ng-click="playRoute()"></a> 
-         </div>
+          </div>
         </div>
         <div class="portlet-body">
           <div id="gmap_marker" class="gmaps">
@@ -74,7 +99,7 @@
           <div class="mx-height-500">
             <div class="scroller" style="height: 500px;" data-always-visible="1" data-rail-visible="0">
               <ul class="feeds tripHistory">
-                <li ng-repeat="tr in tripHistory" ng-click="goToHistoryPage(tr.trip_id)" class="{{(tr.trip_id == trip.trip_id)?'selected':''}}">
+                <li ng-repeat="tr in tripHistory" ng-click="drawTripRoute(tr.trip_id)" class="{{(tr.trip_id == trip.trip_id)?'selected':''}}">
                 <div class="col1">
                   <div class="cont">
                     <div class="cont-col1">
@@ -103,5 +128,5 @@
 </div>
 
 <script>
-  ComponentsPickers.init();
+ComponentsPickers.init();
 </script> 
